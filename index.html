@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>One Nation Republic | Laying the Foundation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-deep: #07090e;
+      --bg-surface: #0f131c;
+      --bg-elevated: #151b26;
+      --border-subtle: #222b3d;
+      --gold: #c5a059;
+      --gold-soft: rgba(197, 160, 89, 0.14);
+      --gold-border: rgba(197, 160, 89, 0.35);
+      --text-primary: #f1f5f9;
+      --text-secondary: #cbd5e1;
+      --text-muted: #94a3b8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-deep);
+      background-image: radial-gradient(circle at 50% 0%, #151c2c 0%, var(--bg-deep) 65%);
+      color: var(--text-primary);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrapper {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 60px 24px 80px;
+    }
+
+    /* Hero Header */
+    header {
+      text-align: center;
+      padding: 40px 0 56px;
+      border-bottom: 1px solid var(--border-subtle);
+      margin-bottom: 64px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: var(--gold-soft);
+      border: 1px solid var(--gold-border);
+      padding: 6px 16px;
+      border-radius: 4px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 640px;
+      margin: 0 auto 32px;
+      font-weight: 400;
+    }
+
+    .cta-group {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--gold);
+      color: #07090e;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      padding: 14px 32px;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      background: #d8b56c;
+      transform: translateY(-2px);
+    }
+
+    /* Section Headings */
+    .section-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    h2 {
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: clamp(1.6rem, 3vw, 2.1rem);
+      letter-spacing: 0.04em;
+      color: var(--text-primary);
+      margin-bottom: 24px;
+    }
+
+    /* Foundation Block */
+    .foundation-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-top: 3px solid var(--gold);
+      border-radius: 10px;
+      padding: clamp(28px, 5vw, 48px);
+      margin-bottom: 64px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .foundation-card p {
+      color: var(--text-secondary);
+      font-size: 1.06rem;
+      margin-bottom: 20px;
+    }
+
+    .foundation-callout {
+      margin-top: 30px;
+      padding: 22px 26px;
+      background: var(--bg-elevated);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 8px 8px 0;
+    }
+
+    .foundation-callout p {
+      color: var(--text-primary);
+      font-weight: 500;
+      font-size: 1.08rem;
+      margin-bottom: 8px;
+    }
+
+    .foundation-callout .pillars {
+      color: var(--gold);
+      font-family: 'Cinzel', Georgia, serif;
+      font-weight: 600;
+      font-size: 1.05rem;
+      letter-spacing: 0.03em;
+      margin-bottom: 0;
+    }
+
+    /* Mission & Vision Layout */
+    .mv-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      margin-bottom: 64px;
+    }
+
+    .panel {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      padding: clamp(28px, 4vw, 40px);
+    }
+
+    .panel p {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+    }
+
+    .vision-intro {
+      margin-bottom: 20px;
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+    }
+
+    .vision-list {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+    }
+
+    .vision-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-subtle);
+      padding: 16px 20px;
+      border-radius: 8px;
+      color: var(--text-primary);
+      font-size: 0.98rem;
+    }
+
+    .vision-list li::before {
+      content: "◆";
+      color: var(--gold);
+      font-size: 0.85rem;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    /* Principles Grid */
+    .principles-section {
+      margin-bottom: 64px;
+    }
+
+    .principles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 24px;
+      margin-top: 28px;
+    }
+
+    .principle-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      padding: 28px;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .principle-card:hover {
+      border-color: var(--gold-border);
+      transform: translateY(-2px);
+    }
+
+    .principle-card h3 {
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: 1.15rem;
+      color: var(--gold);
+      margin-bottom: 10px;
+      letter-spacing: 0.03em;
+    }
+
+    .principle-card p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 36px;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      letter-spacing: 0.03em;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+
+    <!-- HERO -->
+    <header>
+      <span class="eyebrow">Structure • Unity • Sovereignty</span>
+      <h1>ONE NATION REPUBLIC</h1>
+      <p class="hero-sub">Strong, informed communities rooted in lawful principles, personal responsibility, and economic cooperation.</p>
+      <div class="cta-group">
+        <a href="#REPLACE_WITH_COMMUNITY_LINK" class="btn-primary">Enter the One Nation Community</a>
+      </div>
+    </header>
+
+    <!-- LAYING THE FOUNDATION -->
+    <section class="foundation-card">
+      <span class="section-label">Purpose &amp; Groundwork</span>
+      <h2>Laying the Foundation</h2>
+      <p>One Nation was created to bring structure, education, and economic cooperation back to the people. The app and website serve as tools — spaces to connect, study, build, and organize. They are not the end goal. They are the foundation for something greater: strong, informed communities rooted in lawful principles and personal responsibility.</p>
+      <p>We do not gatekeep knowledge. We believe education should be accessible to those willing to study and apply it with discipline. When individuals understand systems, they can navigate them intelligently and build alternatives where necessary.</p>
+      <p>Our long-term objective is clear — to contribute to the restoration of the Republic by strengthening individuals first. Informed people create stable families. Stable families create strong communities. Strong communities create lasting change.</p>
+      <div class="foundation-callout">
+        <p>One Nation exists to connect builders, not spectators.</p>
+        <p class="pillars">This is about structure. This is about unity. This is about laying groundwork that outlives the platform itself.</p>
+      </div>
+    </section>
+
+    <!-- MISSION & VISION -->
+    <div class="mv-grid">
+      <section class="panel">
+        <span class="section-label">Why We Stand</span>
+        <h2>Our Mission</h2>
+        <p>The One Nation Republic is founded on the timeless principles of freedom, sovereignty, and God’s law. Rooted in the spirit of liberty portrayed in <em>V for Vendetta</em> and guided by the constitutional ideals of the American Republic, our mission is to create a society where every individual has the opportunity to live with dignity, purpose, and prosperity.</p>
+      </section>
+
+      <section class="panel">
+        <span class="section-label">The Future We Build</span>
+        <h2>Our Vision</h2>
+        <p class="vision-intro">We envision a beautiful future where:</p>
+        <ul class="vision-list">
+          <li>Free food, housing, and resources are made available for all.</li>
+          <li>A fair and just system protects the sovereignty of each man and woman.</li>
+          <li>Families are nurtured and encouraged to thrive, securing generational growth and prosperity.</li>
+          <li>Tribal unity strengthens community bonds while honoring individuality.</li>
+          <li>A reformed government, self-sufficient under the Empire of Ameruk, guarantees equality, justice, and representation for every sovereign tribe.</li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- PRINCIPLES -->
+    <section class="principles-section">
+      <span class="section-label">Foundational Pillars</span>
+      <h2>Our Principles</h2>
+      <div class="principles-grid">
+        <div class="principle-card">
+          <h3>Constitutional Republic</h3>
+          <p>A republican form of governing ensures fairness, equality, and representation of the people.</p>
+        </div>
+        <div class="principle-card">
+          <h3>Freedom &amp; Sovereignty</h3>
+          <p>Each citizen is sovereign, free to think, create, and live without unjust interference.</p>
+        </div>
+        <div class="principle-card">
+          <h3>God’s Law</h3>
+          <p>A moral compass that guides us toward justice, truth, and righteousness.</p>
+        </div>
+        <div class="principle-card">
+          <h3>Fair Living</h3>
+          <p>Systems that provide equity, opportunity, and the security of essential needs.</p>
+        </div>
+        <div class="principle-card">
+          <h3>Intellectual &amp; Economic Growth</h3>
+          <p>Fostering innovation, education, and sustainable commerce to benefit all.</p>
+        </div>
+        <div class="principle-card">
+          <h3>Unity &amp; Strength</h3>
+          <p>Sovereign tribes working together in harmony, ensuring balance between self-determination and collective well-being.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      &copy; 2026 One Nation Republic. All Rights Reserved.
+    </footer>
+
+  </div>
+
+</body>
+</html>
