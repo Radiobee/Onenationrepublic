@@ -122,4 +122,248 @@
 
     /* Category Dividers */
     .category-title {
-      font-
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: 0.92rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 42px 0 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .category-title::before,
+    .category-title::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--border-subtle);
+    }
+
+    /* Link Buttons */
+    .links-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      width: 100%;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 14px;
+      width: 100%;
+    }
+
+    .link-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-left: 3px solid var(--gold);
+      color: var(--text-primary);
+      text-decoration: none;
+      padding: 18px 22px;
+      border-radius: 10px;
+      transition: all 0.22s ease;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    }
+
+    .link-btn:hover {
+      background: var(--bg-elevated);
+      border-color: var(--gold);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(197, 160, 89, 0.16);
+    }
+
+    .link-btn.featured {
+      background: linear-gradient(135deg, rgba(197, 160, 89, 0.18) 0%, var(--bg-surface) 100%);
+      border: 1px solid var(--gold);
+      border-left: 4px solid var(--gold);
+    }
+
+    .link-title {
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: 1.02rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+      letter-spacing: 0.03em;
+    }
+
+    .link-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #07090e;
+      background: var(--gold);
+      padding: 3px 10px;
+      border-radius: 4px;
+      margin-bottom: 8px;
+    }
+
+    /* Footer */
+    .footer-note {
+      margin-top: 64px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border-subtle);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .footer-note a {
+      color: var(--gold);
+      text-decoration: none;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hub-container">
+    <div class="header-box">
+      <img src="One%20Nation%20Logo.jpg" alt="One Nation Republic Emblem" class="logo-img" />
+      <span class="eyebrow">@thebookofjohnson</span>
+      <h1>THE BOOK OF JOHNSON</h1>
+      <p class="bio">Educator exploring the intersection of mental health, sovereignty, and learning. Join the journey through structure, knowledge, and wellness.</p>
+    </div>
+
+    <!-- SOCIAL LINKS -->
+    <div class="social-bar">
+      <a href="https://tiktok.com/@thebook0fjohnson" class="social-pill" target="_blank" rel="noopener noreferrer">TikTok</a>
+      <a href="https://instagram.com/thebookofjohnson" class="social-pill" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://youtube.com/@thebookofjohnson964?si=8tZqaK2pA-GeH9Lf" class="social-pill" target="_blank" rel="noopener noreferrer">YouTube</a>
+      <a href="index.html" class="social-pill">One Nation Main Site</a>
+    </div>
+
+    <!-- SECTION 1: ONE NATION REPUBLIC MEMBERSHIPS -->
+    <div class="category-title">One Nation Republic</div>
+    <div class="links-list">
+      <a href="https://one-nation-info.mn.co/plans/2003708?bundle_token=3a23848fa6f487fae4ee3cda4fb9934a&utm_source=manual" class="link-btn featured" target="_blank" rel="noopener noreferrer">
+        <span class="badge">30-Day Free Trial</span>
+        <span class="link-title">One Nation Republic — \$20 Monthly (30-Day Free Trial)</span>
+        <span class="link-desc">Enter the Official One Nation Community &amp; Study Network</span>
+      </a>
+
+      <a href="https://one-nation-info.mn.co/plans/1980356?bundle_token=b3a3a8acbbf471cc1cc85719cc9631fe&utm_source=manual" class="link-btn" target="_blank" rel="noopener noreferrer">
+        <span class="link-title">One Nation Republic Direct Signup</span>
+        <span class="link-desc">Standard Membership Enrollment Portal</span>
+      </a>
+
+      <a href="https://one-nation-info.mn.co/plans/1980357?bundle_token=84c4d63c34ab87a991c001375bbdda75&utm_source=manual" class="link-btn" target="_blank" rel="noopener noreferrer">
+        <span class="link-title">Welcome to One Nation (Apple / iOS)</span>
+        <span class="link-desc">Restoring Knowledge &amp; Freedom — Access for iPhone &amp; iPad</span>
+      </a>
+
+      <a href="https://one-nation-info.mn.co/plans/1997754?bundle_token=bade7144ffb38dca4aacc165f6d8c4a4&utm_source=manual" class="link-btn" target="_blank" rel="noopener noreferrer">
+        <span class="link-title">One Nation Republic (Android)</span>
+        <span class="link-desc">Community Access &amp; App Setup for Android Devices</span>
+      </a>
+    </div>
+
+    <!-- SECTION 2: CLASSES, REPLAYS & STUDY VAULTS -->
+    <div class="category-title">Classes, Replays &amp; Libraries</div>
+    <div class="links-list">
+      <a href="https://buy.stripe.com/3cIbJ09iBcywak4a1x08g0h" class="link-btn featured" target="_blank" rel="noopener noreferrer">
+        <span class="badge">Class Replays</span>
+        <span class="link-title">Trust Class Replay Membership</span>
+        <span class="link-desc">Full Replay Access to Private Trust Education &amp; Structuring</span>
+      </a>
+
+      <a href="https://donate.stripe.com/6oUbJ09iB0PO4ZK3D908g0e" class="link-btn featured" target="_blank" rel="noopener noreferrer">
+        <span class="badge">Executive Series</span>
+        <span class="link-title">Executive Class Replay Membership</span>
+        <span class="link-desc">Advanced Administrative &amp; Executive Study Replays</span>
+      </a>
+
+      <a href="https://buy.stripe.com/aFa5kCeCVfKIeAk2z508g05" class="link-btn" target="_blank" rel="noopener noreferrer">
+        <span class="link-title">Lawful Library Access</span>
+        <span class="link-desc">Foundational Study Documents, Templates &amp; Reference Materials</span>
+      </a>
+
+      <a href="https://drive.google.com/drive/folders/1ajkRK29fSdsqTrvnzC0T_Or8dtHMGvU3?usp=drive_link" class="link-btn" target="_blank" rel="noopener noreferrer">
+        <span class="link-title">Kingdome Academy — Google Drive PDF Vault</span>
+        <span class="link-desc">Direct Access to Study PDFs &amp; Foundational Curriculum</span>
+      </a>
+
+      <a href="https://drive.google.com/drive/folders/1r7dK4bvj5s_7ybwIqMLauhM3Wws9elK_?usp=sharing" class="link-btn" target="_blank" rel="noopener noreferrer">
+        <span class="link-title">Freedom 4 All — Google Drive</span>
+        <span class="link-desc">Open Community Study Files &amp; Public Resource Folder</span>
+      </a>
+    </div>
+
+    <!-- SECTION 3: BOOKS & DIRECT SUPPORT -->
+    <div class="category-title">Books &amp; Direct Support</div>
+    <div class="links-list">
+      <a href="https://a.co/d/cUYOVhE" class="link-btn featured" target="_blank" rel="noopener noreferrer">
+        <span class="badge">Available on Amazon</span>
+        <span class="link-title">THE BOOK OF JOHNSON: Unlocking The King-Dome</span>
+        <span class="link-desc">Get the Official Paperback Edition on Amazon</span>
+      </a>
+
+      <a href="https://venmo.com/code?user_id=2750949311381504272&created=1676739250.553131&printed=1" class="link-btn" target="_blank" rel="noopener noreferrer">
+        <span class="link-title">Venmo | Book of Johnson</span>
+        <span class="link-desc">Direct Contributions &amp; Community Support</span>
+      </a>
+    </div>
+
+    <!-- SECTION 4: HEALTH, ENERGY & WELLNESS PARTNERS -->
+    <div class="category-title">Health, Energy &amp; Wellness</div>
+    <div class="links-list">
+      <a href="https://olylife.io/?affID=EA705254" class="link-btn" target="_blank" rel="noopener noreferrer">
+        <span class="link-title">Discover OlyLife: Transform Your Health &amp; Wellness</span>
+        <span class="link-desc">PEMF &amp; THz Wellness Devices for Energy &amp; Vitality</span>
+      </a>
+
+      <a href="https://www.purehimalayanshilajit.com/?ref=1810&coupon_code=23ff86534fvx" class="link-btn" target="_blank" rel="noopener noreferrer">
+        <span class="link-title">Pure Himalayan Shilajit</span>
+        <span class="link-desc">Organic Trace Minerals &amp; Fulvic Acid (Includes Discount Code)</span>
+      </a>
+
+      <a href="https://sacredtea.net/thebookofjohnson" class="link-btn" target="_blank" rel="noopener noreferrer">
+        <span class="link-title">Sacred Tea LLC</span>
+        <span class="link-desc">Botanical Blends &amp; Natural Wellness Teas</span>
+      </a>
+
+      <a href="http://www.free-energy-info.tuks.nl/indexOct2018.html" class="link-btn" target="_blank" rel="noopener noreferrer">
+        <span class="link-title">Free Energy Devices</span>
+        <span class="link-desc">Independent Energy Research &amp; Technical Directory</span>
+      </a>
+    </div>
+
+    <!-- SECTION 5: PREMIUM NATURAL ADAPTOGENS -->
+    <div class="category-title">Premium Natural Adaptogens</div>
+    <div class="product-grid">
+      <a href="https://click.linksynergy.com/link?id=5lRxBRhs1h0&offerid=1800388.5363813536179174955046184&type=15&murl=https%3A%2F%2Fwww.gnc.com%2Fsexual-health%2F061106.html&u1=1282f0cc-8026-4a6c-b081-fa2b7b733639" class="link-btn" target="_blank" rel="noopener noreferrer">
+        <span class="link-title">Pure Himalayan Shilajit Gummies</span>
+        <span class="link-desc">60 Gummies (30 Servings)</span>
+      </a>
+
+      <a href="https://r.amzlink.to/?btn_url=https%3A%2F%2Fwww.amazon.com%2Fdp%2FB0DTPZRN7Q%2Fref%3Dasc_df_B0DTPZRN7Q1792681200000%3Ftag%3D18620-thebookofjohnson-20%26linkCode%3Ddf0&btn_ref=org-433bb393e1b8b503" class="link-btn" target="_blank" rel="noopener noreferrer">
+        <span class="link-title">HIIHONE 8-in-1 Soursop Graviola Bitters</span>
+        <span class="link-desc">Liquid Drops with Sea Moss, Ashwagandha &amp; Turmeric (1 fl oz)</span>
+      </a>
+
+      <a href="https://click.linksynergy.com/link?id=5lRxBRhs1h0&offerid=1800388.536383346844624050525749&type=15&murl=https%3A%2F%2Fwww.gnc.com%2Fwomens-hormone-perimenopause%2F061121.html&u1=1282f0cc-8026-4a6c-b081-fa2b7b733639" class="link-btn" target="_blank" rel="noopener noreferrer">
+        <span class="link-title">She-lajit Honey Sticks — Strawberry</span>
+        <span class="link-desc">30 Sticks • Women's Hormone &amp; Vitality Support</span>
+      </a>
+
+      <a href="https://r.amzlink.to/?btn_url=https%3A%2F%2Fwww.amazon.com%2Fdp%2FB0FCVH5KY8%2Fref%3Dasc_df_B0FCVH5KY81792681200000%3Ftag%3D18620-thebookofjohnson-20%26linkCode%3Ddf0&btn_ref=org-433bb393e1b8b503" class="link-btn" target="_blank" rel="noopener noreferrer">
+        <span class="link-title">CYMBIOTIKA Shilajit Liquid Complex</span>
+        <span class="link-desc">Micronized Shilajit with Cacao, Honey &amp; Sea Salt (26 Packets)</span>
+      </a>
+
+      <a href="
