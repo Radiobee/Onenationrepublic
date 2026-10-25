@@ -9,14 +9,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-deep: #07090e;
-      --bg-surface: #0f131c;
-      --bg-elevated: #151b26;
-      --border-subtle: #222b3d;
-      --gold: #c5a059;
-      --gold-soft: rgba(197, 160, 89, 0.14);
-      --gold-border: rgba(197, 160, 89, 0.35);
-      --text-primary: #f1f5f9;
+      --bg-deep: #000000;
+      --bg-surface: rgba(10, 14, 20, 0.85);
+      --bg-elevated: rgba(18, 24, 34, 0.95);
+      --border-subtle: #1e293b;
+      --gold: #d4af37;
+      --gold-soft: rgba(212, 175, 55, 0.12);
+      --gold-border: rgba(212, 175, 55, 0.4);
+      --text-primary: #f8fafc;
       --text-secondary: #cbd5e1;
       --text-muted: #94a3b8;
     }
@@ -29,17 +29,76 @@
 
     body {
       background-color: var(--bg-deep);
-      background-image: radial-gradient(circle at 50% 0%, #151c2c 0%, var(--bg-deep) 65%);
       color: var(--text-primary);
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       line-height: 1.75;
       -webkit-font-smoothing: antialiased;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Pure Black & Stars Dynamic Background */
+    .bg-animation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      background: #000000;
+      overflow: hidden;
+    }
+
+    .stars, .stars2, .stars3 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 200%;
+      display: block;
+    }
+
+    .stars {
+      background-image: radial-gradient(1px 1px at 25px 50px, #ffffff, rgba(0,0,0,0)),
+                        radial-gradient(1px 1px at 50px 100px, #d4af37, rgba(0,0,0,0)),
+                        radial-gradient(2px 2px at 150px 150px, #ffffff, rgba(0,0,0,0));
+      background-repeat: repeat;
+      background-size: 250px 250px;
+      opacity: 0.4;
+      animation: driftStars 90s linear infinite;
+    }
+
+    .stars2 {
+      background-image: radial-gradient(1.5px 1.5px at 80px 120px, #d4af37, rgba(0,0,0,0)),
+                        radial-gradient(1px 1px at 200px 80px, #ffffff, rgba(0,0,0,0));
+      background-repeat: repeat;
+      background-size: 350px 350px;
+      opacity: 0.6;
+      animation: driftStars 140s linear infinite;
+    }
+
+    .stars3 {
+      background-image: radial-gradient(2px 2px at 50px 200px, #ffffff, rgba(0,0,0,0)),
+                        radial-gradient(1.5px 1.5px at 250px 250px, #d4af37, rgba(0,0,0,0));
+      background-repeat: repeat;
+      background-size: 450px 450px;
+      opacity: 0.3;
+      animation: driftStars 200s linear infinite;
+    }
+
+    @keyframes driftStars {
+      from { transform: translateY(0px); }
+      to { transform: translateY(-50%); }
     }
 
     .wrapper {
       max-width: 1040px;
       margin: 0 auto;
       padding: 60px 24px 80px;
+      position: relative;
+      z-index: 1;
     }
 
     /* Hero Header */
@@ -53,14 +112,21 @@
       align-items: center;
     }
 
+    .logo-frame {
+      position: relative;
+      padding: 6px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold) 0%, transparent 50%, var(--gold) 100%);
+      box-shadow: 0 0 40px rgba(212, 175, 55, 0.25);
+      margin-bottom: 32px;
+    }
+
     .logo-img {
       width: 220px;
       height: 220px;
       object-fit: cover;
       border-radius: 50%;
-      border: 3px solid var(--gold-border);
-      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.8);
-      margin-bottom: 32px;
+      border: 2px solid var(--bg-deep);
       display: block;
     }
 
@@ -68,23 +134,25 @@
       display: inline-block;
       font-size: 0.75rem;
       font-weight: 600;
-      letter-spacing: 0.22em;
+      letter-spacing: 0.25em;
       text-transform: uppercase;
       color: var(--gold);
-      background: var(--gold-soft);
+      background: var(--bg-surface);
       border: 1px solid var(--gold-border);
       padding: 6px 16px;
-      border-radius: 4px;
+      border-radius: 2px;
       margin-bottom: 20px;
+      backdrop-filter: blur(8px);
     }
 
     h1 {
       font-family: 'Cinzel', Georgia, serif;
       font-size: clamp(2.2rem, 5vw, 3.4rem);
       font-weight: 700;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.08em;
       color: var(--text-primary);
       margin-bottom: 16px;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.9);
     }
 
     .hero-sub {
@@ -93,6 +161,7 @@
       max-width: 640px;
       margin: 0 auto 32px;
       font-weight: 400;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.8);
     }
 
     .cta-group {
@@ -105,39 +174,41 @@
     .btn-primary {
       display: inline-block;
       background: var(--gold);
-      color: #07090e;
+      color: #000000;
       font-weight: 600;
       font-size: 0.95rem;
       letter-spacing: 0.04em;
       text-decoration: none;
       padding: 14px 32px;
-      border-radius: 6px;
+      border-radius: 4px;
       transition: all 0.2s ease;
+      box-shadow: 0 4px 16px rgba(212, 175, 55, 0.3);
     }
 
     .btn-primary:hover {
-      background: #d8b56c;
+      background: #e6c55c;
       transform: translateY(-2px);
     }
 
     .btn-secondary {
       display: inline-block;
       background: var(--bg-surface);
+      backdrop-filter: blur(8px);
       color: var(--gold);
-      border: 1px solid var(--gold);
+      border: 1px solid var(--gold-border);
       font-weight: 600;
       font-size: 0.95rem;
       letter-spacing: 0.04em;
       text-decoration: none;
       padding: 14px 32px;
-      border-radius: 6px;
+      border-radius: 4px;
       transition: all 0.2s ease;
     }
 
     .btn-secondary:hover {
       background: var(--gold-soft);
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(197, 160, 89, 0.15);
+      box-shadow: 0 8px 24px rgba(212, 175, 55, 0.2);
     }
 
     /* Section Headings */
@@ -154,7 +225,7 @@
     h2 {
       font-family: 'Cinzel', Georgia, serif;
       font-size: clamp(1.6rem, 3vw, 2.1rem);
-      letter-spacing: 0.04em;
+      letter-spacing: 0.06em;
       color: var(--text-primary);
       margin-bottom: 24px;
     }
@@ -162,12 +233,13 @@
     /* Foundation Block */
     .foundation-card {
       background: var(--bg-surface);
+      backdrop-filter: blur(10px);
       border: 1px solid var(--border-subtle);
       border-top: 3px solid var(--gold);
-      border-radius: 10px;
+      border-radius: 6px;
       padding: clamp(28px, 5vw, 48px);
       margin-bottom: 64px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
     }
 
     .foundation-card p {
@@ -181,7 +253,7 @@
       padding: 22px 26px;
       background: var(--bg-elevated);
       border-left: 3px solid var(--gold);
-      border-radius: 0 8px 8px 0;
+      border-radius: 0 4px 4px 0;
     }
 
     .foundation-callout p {
@@ -210,9 +282,11 @@
 
     .panel {
       background: var(--bg-surface);
+      backdrop-filter: blur(10px);
       border: 1px solid var(--border-subtle);
-      border-radius: 10px;
+      border-radius: 6px;
       padding: clamp(28px, 4vw, 40px);
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5);
     }
 
     .panel p {
@@ -239,7 +313,7 @@
       background: var(--bg-elevated);
       border: 1px solid var(--border-subtle);
       padding: 16px 20px;
-      border-radius: 8px;
+      border-radius: 4px;
       color: var(--text-primary);
       font-size: 0.98rem;
     }
@@ -266,10 +340,12 @@
 
     .principle-card {
       background: var(--bg-surface);
+      backdrop-filter: blur(10px);
       border: 1px solid var(--border-subtle);
-      border-radius: 10px;
+      border-radius: 6px;
       padding: 28px;
       transition: border-color 0.2s ease, transform 0.2s ease;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
     }
 
     .principle-card:hover {
@@ -282,7 +358,7 @@
       font-size: 1.15rem;
       color: var(--gold);
       margin-bottom: 10px;
-      letter-spacing: 0.03em;
+      letter-spacing: 0.04em;
     }
 
     .principle-card p {
@@ -299,6 +375,10 @@
       color: var(--text-muted);
       font-size: 0.88rem;
       letter-spacing: 0.03em;
+      background: var(--bg-surface);
+      backdrop-filter: blur(10px);
+      border-radius: 6px;
+      padding: 24px;
     }
 
     footer a {
@@ -310,12 +390,21 @@
 </head>
 <body>
 
+  <!-- PURE BLACK & STARS CELESTIAL BACKGROUND -->
+  <div class="bg-animation">
+    <div class="stars"></div>
+    <div class="stars2"></div>
+    <div class="stars3"></div>
+  </div>
+
   <div class="wrapper">
 
     <!-- HERO -->
     <header>
-      <img src="One%20Nation%20Logo.jpg" alt="One Nation Restoration of the Republic Emblem" class="logo-img" />
-      <span class="eyebrow">Structure • Unity • Sovereignty</span>
+      <div class="logo-frame">
+        <img src="One%20Nation%20Logo.jpg" alt="One Nation Restoration of the Republic Emblem" class="logo-img" />
+      </div>
+      <span class="eyebrow">𓋹 Structure • Unity • Sovereignty 𓋹</span>
       <h1>ONE NATION REPUBLIC</h1>
       <p class="hero-sub">Strong, informed communities rooted in lawful principles, personal responsibility, and economic cooperation.</p>
       <div class="cta-group">
