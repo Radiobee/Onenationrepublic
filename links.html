@@ -9,14 +9,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-deep: #07090e;
-      --bg-surface: #0f131c;
-      --bg-elevated: #151b26;
-      --border-subtle: #222b3d;
-      --gold: #c5a059;
-      --gold-soft: rgba(197, 160, 89, 0.14);
-      --gold-border: rgba(197, 160, 89, 0.35);
-      --text-primary: #f1f5f9;
+      --bg-deep: #05070a;
+      --bg-surface: #0c1018;
+      --bg-elevated: #131924;
+      --border-subtle: #232d42;
+      --gold: #d4af37;
+      --gold-soft: rgba(212, 175, 55, 0.12);
+      --gold-border: rgba(212, 175, 55, 0.4);
+      --lapis: #101b30;
+      --text-primary: #f8fafc;
       --text-secondary: #cbd5e1;
       --text-muted: #94a3b8;
     }
@@ -29,7 +30,9 @@
 
     body {
       background-color: var(--bg-deep);
-      background-image: radial-gradient(circle at 50% 0%, #151c2c 0%, var(--bg-deep) 65%);
+      background-image: 
+        radial-gradient(circle at 50% 0%, #111a2e 0%, var(--bg-deep) 70%),
+        repeating-linear-gradient(45deg, rgba(212, 175, 55, 0.015) 0, rgba(212, 175, 55, 0.015) 1px, transparent 0, transparent 50px);
       color: var(--text-primary);
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       line-height: 1.6;
@@ -45,21 +48,29 @@
       text-align: center;
     }
 
-    /* Profile Header */
+    /* Profile Header with Sacred Geometry Frame */
     .header-box {
       display: flex;
       flex-direction: column;
       align-items: center;
+      position: relative;
+    }
+
+    .logo-frame {
+      position: relative;
+      padding: 6px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold) 0%, transparent 50%, var(--gold) 100%);
+      box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+      margin-bottom: 24px;
     }
 
     .logo-img {
-      width: 200px;
-      height: 200px;
+      width: 190px;
+      height: 190px;
       object-fit: cover;
       border-radius: 50%;
-      border: 3px solid var(--gold-border);
-      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.85);
-      margin-bottom: 24px;
+      border: 2px solid var(--bg-deep);
       display: block;
     }
 
@@ -67,13 +78,13 @@
       display: inline-block;
       font-size: 0.72rem;
       font-weight: 600;
-      letter-spacing: 0.22em;
+      letter-spacing: 0.25em;
       text-transform: uppercase;
       color: var(--gold);
       background: var(--gold-soft);
       border: 1px solid var(--gold-border);
-      padding: 5px 14px;
-      border-radius: 4px;
+      padding: 6px 16px;
+      border-radius: 2px;
       margin-bottom: 14px;
     }
 
@@ -81,9 +92,10 @@
       font-family: 'Cinzel', Georgia, serif;
       font-size: clamp(1.8rem, 4vw, 2.4rem);
       font-weight: 700;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.08em;
       color: var(--text-primary);
       margin-bottom: 10px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
     }
 
     .bio {
@@ -110,33 +122,35 @@
       background: var(--bg-surface);
       border: 1px solid var(--gold-border);
       padding: 8px 18px;
-      border-radius: 999px;
+      border-radius: 2px;
       transition: all 0.2s ease;
     }
 
     .social-pill:hover {
       background: var(--gold);
-      color: #07090e;
+      color: #05070a;
       transform: translateY(-2px);
     }
 
-    /* Category Dividers */
+    /* Category Dividers with Egyptian Cartouche Vibe */
     .category-title {
       font-family: 'Cinzel', Georgia, serif;
       font-size: 0.92rem;
       font-weight: 700;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--gold);
-      margin: 42px 0 18px;
+      margin: 48px 0 18px;
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
     }
 
     .category-title::before,
     .category-title::after {
-      content: "";
+      content: "◆";
+      font-size: 0.5rem;
+      color: var(--gold);
       flex: 1;
       height: 1px;
       background: var(--border-subtle);
@@ -168,21 +182,22 @@
       color: var(--text-primary);
       text-decoration: none;
       padding: 18px 22px;
-      border-radius: 10px;
+      border-radius: 4px;
       transition: all 0.22s ease;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      position: relative;
     }
 
     .link-btn:hover {
       background: var(--bg-elevated);
       border-color: var(--gold);
       transform: translateY(-2px);
-      box-shadow: 0 12px 32px rgba(197, 160, 89, 0.16);
+      box-shadow: 0 12px 32px rgba(212, 175, 55, 0.15);
     }
 
     .link-btn.featured {
-      background: linear-gradient(135deg, rgba(197, 160, 89, 0.18) 0%, var(--bg-surface) 100%);
-      border: 1px solid var(--gold);
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, var(--bg-surface) 100%);
+      border: 1px solid var(--gold-border);
       border-left: 4px solid var(--gold);
     }
 
@@ -192,7 +207,7 @@
       font-weight: 600;
       color: var(--text-primary);
       margin-bottom: 4px;
-      letter-spacing: 0.03em;
+      letter-spacing: 0.04em;
     }
 
     .link-desc {
@@ -205,11 +220,11 @@
       font-size: 0.68rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: #07090e;
+      letter-spacing: 0.12em;
+      color: #05070a;
       background: var(--gold);
       padding: 3px 10px;
-      border-radius: 4px;
+      border-radius: 2px;
       margin-bottom: 8px;
     }
 
@@ -234,8 +249,10 @@
 
   <div class="hub-container">
     <div class="header-box">
-      <img src="One%20Nation%20Logo.jpg" alt="One Nation Republic Emblem" class="logo-img" />
-      <span class="eyebrow">@thebookofjohnson</span>
+      <div class="logo-frame">
+        <img src="One%20Nation%20Logo.jpg" alt="One Nation Republic Emblem" class="logo-img" />
+      </div>
+      <span class="eyebrow">𓋹 Structure • Unity • Sovereignty 𓋹</span>
       <h1>THE BOOK OF JOHNSON</h1>
       <p class="bio">Educator exploring the intersection of mental health, sovereignty, and learning. Join the journey through structure, knowledge, and wellness.</p>
     </div>
@@ -372,7 +389,7 @@
       </a>
 
       <a href="https://click.linksynergy.com/link?id=5lRxBRhs1h0&offerid=1800388.536385719040919043110259&type=15&murl=https%3A%2F%2Fwww.gnc.com%2Fsea-moss%2F061104.html&u1=1282f0cc-8026-4a6c-b081-fa2b7b733639" class="link-btn" target="_blank" rel="noopener noreferrer">
-        <span class="link-title">Shilajit Sea Moss Capsules</span>
+        <span class="link-title">Shilajit Sea MossCapsules</span>
         <span class="link-desc">120 Capsules (60 Servings)</span>
       </a>
 
