@@ -16,35 +16,16 @@
       --gold: #d4af37;
       --gold-bright: #f9e29c;
       --gold-deep: #99741f;
-      --gold-soft: rgba(212, 175, 55, 0.12);
       --gold-border: rgba(212, 175, 55, 0.45);
       --text-primary: #f8fafc;
       --text-secondary: #cbd5e1;
       --text-muted: #94a3b8;
     }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    ::selection {
-      background: var(--gold);
-      color: #000000;
-    }
-
-    /* Custom Gold Scrollbar */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #020305;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: linear-gradient(180deg, var(--gold-deep), var(--gold), var(--gold-deep));
-      border-radius: 4px;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    ::selection { background: var(--gold); color: #000; }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #020305; }
+    ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, var(--gold-deep), var(--gold), var(--gold-deep)); border-radius: 4px; }
 
     body {
       background-color: var(--bg-deep);
@@ -56,137 +37,251 @@
       overflow-x: hidden;
     }
 
-    /* Pure Black & Stars Dynamic Background */
+    /* Dynamic Celestial Starfield */
     .bg-animation {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: -1;
+      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1;
       background: radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.08) 0%, rgba(10, 15, 28, 0.4) 35%, #000000 75%);
       overflow: hidden;
     }
-
-    .stars, .stars2, .stars3 {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      width: 100%;
-      height: 200%;
-      display: block;
-    }
-
+    .stars, .stars2, .stars3 { position: absolute; inset: 0; width: 100%; height: 200%; display: block; background-repeat: repeat; }
     .stars {
-      background-image: radial-gradient(1px 1px at 25px 50px, #ffffff, rgba(0,0,0,0)),
-                        radial-gradient(1.5px 1.5px at 50px 100px, #d4af37, rgba(0,0,0,0)),
-                        radial-gradient(2px 2px at 150px 150px, #ffffff, rgba(0,0,0,0));
-      background-repeat: repeat;
-      background-size: 250px 250px;
-      opacity: 0.45;
-      animation: driftStars 90s linear infinite;
+      background-image: radial-gradient(1px 1px at 25px 50px, #fff, transparent), radial-gradient(1.5px 1.5px at 50px 100px, #d4af37, transparent), radial-gradient(2px 2px at 150px 150px, #fff, transparent);
+      background-size: 250px 250px; opacity: 0.45; animation: driftStars 90s linear infinite;
     }
-
     .stars2 {
-      background-image: radial-gradient(1.5px 1.5px at 80px 120px, #d4af37, rgba(0,0,0,0)),
-                        radial-gradient(1px 1px at 200px 80px, #ffffff, rgba(0,0,0,0));
-      background-repeat: repeat;
-      background-size: 350px 350px;
-      opacity: 0.65;
-      animation: driftStars 140s linear infinite;
+      background-image: radial-gradient(1.5px 1.5px at 80px 120px, #d4af37, transparent), radial-gradient(1px 1px at 200px 80px, #fff, transparent);
+      background-size: 350px 350px; opacity: 0.65; animation: driftStars 140s linear infinite;
     }
-
     .stars3 {
-      background-image: radial-gradient(2px 2px at 50px 200px, #ffffff, rgba(0,0,0,0)),
-                        radial-gradient(1.5px 1.5px at 250px 250px, #d4af37, rgba(0,0,0,0));
-      background-repeat: repeat;
-      background-size: 450px 450px;
-      opacity: 0.35;
-      animation: driftStars 200s linear infinite;
+      background-image: radial-gradient(2px 2px at 50px 200px, #fff, transparent), radial-gradient(1.5px 1.5px at 250px 250px, #d4af37, transparent);
+      background-size: 450px 450px; opacity: 0.35; animation: driftStars 200s linear infinite;
     }
 
-    @keyframes driftStars {
-      from { transform: translateY(0px); }
-      to { transform: translateY(-50%); }
-    }
-
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes rotateSlow {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-
-    @keyframes rotateReverse {
-      from { transform: rotate(360deg); }
-      to { transform: rotate(0deg); }
-    }
-
+    @keyframes driftStars { from { transform: translateY(0); } to { transform: translateY(-50%); } }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes rotateSlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    @keyframes rotateReverse { from { transform: rotate(360deg); } to { transform: rotate(0deg); } }
     @keyframes pulseHalo {
       0%, 100% { box-shadow: 0 0 40px rgba(212, 175, 55, 0.22), inset 0 0 20px rgba(212, 175, 55, 0.15); }
       50% { box-shadow: 0 0 65px rgba(212, 175, 55, 0.45), inset 0 0 30px rgba(212, 175, 55, 0.25); }
     }
+    @keyframes goldShimmer { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
 
-    @keyframes goldShimmer {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    .wrapper {
-      max-width: 1040px;
-      margin: 0 auto;
-      padding: 64px 24px 90px;
-      position: relative;
-      z-index: 1;
-      animation: fadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    }
+    .wrapper { max-width: 1040px; margin: 0 auto; padding: 64px 24px 90px; position: relative; z-index: 1; animation: fadeUp 0.85s ease forwards; }
 
     /* Hero Header */
-    header {
-      text-align: center;
-      padding: 40px 0 64px;
-      margin-bottom: 64px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: relative;
-    }
-
-    /* Tapered Golden Bottom Divider on Header */
+    header { text-align: center; padding: 40px 0 64px; margin-bottom: 64px; display: flex; flex-direction: column; align-items: center; position: relative; }
     header::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 10%;
-      width: 80%;
-      height: 1px;
+      content: ""; position: absolute; bottom: 0; left: 10%; width: 80%; height: 1px;
       background: linear-gradient(90deg, transparent 0%, var(--gold-border) 25%, var(--gold-bright) 50%, var(--gold-border) 75%, transparent 100%);
     }
-
     .logo-frame {
-      position: relative;
-      padding: 8px;
-      border-radius: 50%;
+      position: relative; padding: 8px; border-radius: 50%;
       background: linear-gradient(135deg, var(--gold-bright) 0%, var(--gold-deep) 50%, var(--gold) 100%);
-      animation: pulseHalo 5s ease-in-out infinite;
-      margin-bottom: 36px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      animation: pulseHalo 5s ease-in-out infinite; margin-bottom: 36px; display: flex; align-items: center; justify-content: center;
     }
-
-    /* Outer Rotating Astrolabe Ring */
     .logo-frame::before {
-      content: "";
+      content: ""; position: absolute; inset: -12px; border-radius: 50%;
+      border: 1px dashed rgba(212, 175, 55, 0.55); animation: rotateSlow 45s linear infinite; pointer-events: none;
+    }
+    .logo-frame::after {
+      content: ""; position: absolute; inset: -22px; border-radius: 50%;
+      border: 1px solid rgba(212, 175, 55, 0.18); border-top-color: var(--gold); border-bottom-color: var(--gold);
+      animation: rotateReverse 30s linear infinite; pointer-events: none;
+    }
+    .logo-img { width: 220px; height: 220px; object-fit: cover; border-radius: 50%; border: 3px solid #000; display: block; position: relative; z-index: 2; }
+
+    .eyebrow {
+      display: inline-block; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--gold-bright); background: linear-gradient(90deg, rgba(212,175,55,0.05) 0%, rgba(212,175,55,0.18) 50%, rgba(212,175,55,0.05) 100%);
+      border: 1px solid var(--gold-border); padding: 7px 20px; border-radius: 2px; margin-bottom: 20px; backdrop-filter: blur(8px);
+    }
+    h1 {
+      font-family: 'Cinzel', Georgia, serif; font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 800; letter-spacing: 0.1em;
+      background: linear-gradient(120deg, #fff 0%, var(--gold-bright) 35%, var(--gold) 65%, #fff 100%);
+      background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      animation: goldShimmer 8s ease infinite; margin-bottom: 16px; filter: drop-shadow(0 4px 16px rgba(0,0,0,0.9));
+    }
+    .hero-sub { font-size: 1.12rem; color: var(--text-secondary); max-width: 650px; margin: 0 auto 36px; text-shadow: 0 2px 6px rgba(0,0,0,0.9); }
+
+    .cta-group { display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-block; background: linear-gradient(135deg, var(--gold-bright) 0%, var(--gold) 50%, #b88f28 100%);
+      color: #000; font-family: 'Cinzel', Georgia, serif; font-weight: 700; font-size: 0.92rem; letter-spacing: 0.06em;
+      text-transform: uppercase; text-decoration: none; padding: 15px 34px; border-radius: 4px; transition: all 0.28s ease;
+      box-shadow: 0 6px 24px rgba(212, 175, 55, 0.35);
+    }
+    .btn-primary:hover { transform: translateY(-3px) scale(1.01); box-shadow: 0 12px 32px rgba(249, 226, 156, 0.5); }
+    .btn-secondary {
+      display: inline-block; background: var(--bg-surface); backdrop-filter: blur(10px); color: var(--gold-bright);
+      border: 1px solid var(--gold-border); font-family: 'Cinzel', Georgia, serif; font-weight: 700; font-size: 0.92rem;
+      letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; padding: 15px 34px; border-radius: 4px; transition: all 0.28s ease;
+    }
+    .btn-secondary:hover { background: rgba(212, 175, 55, 0.18); border-color: var(--gold-bright); color: #fff; transform: translateY(-3px); }
+
+    /* Sections & Cards */
+    .section-label { font-size: 0.76rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.24em; color: var(--gold-bright); margin-bottom: 10px; display: block; }
+    h2 { font-family: 'Cinzel', Georgia, serif; font-size: clamp(1.65rem, 3vw, 2.15rem); font-weight: 700; letter-spacing: 0.06em; color: var(--text-primary); margin-bottom: 24px; }
+
+    .foundation-card {
+      background: linear-gradient(160deg, rgba(16, 22, 34, 0.88) 0%, rgba(8, 11, 18, 0.92) 100%);
+      backdrop-filter: blur(12px); border: 1px solid var(--border-subtle); border-top: 3px solid var(--gold);
+      border-radius: 6px; padding: clamp(30px, 5vw, 52px); margin-bottom: 64px; box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+    }
+    .foundation-card p { color: var(--text-secondary); font-size: 1.06rem; margin-bottom: 20px; }
+    .foundation-callout {
+      margin-top: 32px; padding: 24px 28px; background: linear-gradient(135deg, rgba(212, 175, 55, 0.14) 0%, rgba(14, 20, 30, 0.95) 100%);
+      border: 1px solid var(--gold-border); border-left: 4px solid var(--gold-bright); border-radius: 0 4px 4px 0;
+    }
+    .foundation-callout p { color: var(--text-primary); font-weight: 500; font-size: 1.08rem; margin-bottom: 8px; }
+    .foundation-callout .pillars { color: var(--gold-bright); font-family: 'Cinzel', Georgia, serif; font-weight: 700; font-size: 1.06rem; margin-bottom: 0; }
+
+    .mv-grid { display: grid; grid-template-columns: 1fr; gap: 32px; margin-bottom: 64px; }
+    .panel {
+      background: var(--bg-surface); backdrop-filter: blur(12px); border: 1px solid var(--border-subtle);
+      border-left: 3px solid var(--gold); border-radius: 6px; padding: clamp(28px, 4vw, 44px); box-shadow: 0 16px 40px rgba(0,0,0,0.6); transition: all 0.28s ease;
+    }
+    .panel:hover { border-color: var(--gold-border); box-shadow: 0 20px 44px rgba(212, 175, 55, 0.12); }
+    .panel p, .vision-intro { color: var(--text-secondary); font-size: 1.05rem; margin-bottom: 20px; }
+    .vision-list { list-style: none; display: grid; gap: 14px; }
+    .vision-list li {
+      display: flex; align-items: flex-start; gap: 14px; background: var(--bg-elevated);
+      border: 1px solid var(--border-subtle); padding: 16px 22px; border-radius: 4px; color: var(--text-primary); font-size: 0.98rem; transition: all 0.22s ease;
+    }
+    .vision-list li:hover { border-color: var(--gold-border); transform: translateX(4px); }
+    .vision-list li::before { content: "❖"; color: var(--gold-bright); font-size: 0.85rem; margin-top: 2px; flex-shrink: 0; }
+
+    .principles-section { margin-bottom: 64px; }
+    .principles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 24px; margin-top: 28px; }
+    .principle-card {
+      background: var(--bg-surface); backdrop-filter: blur(12px); border: 1px solid var(--border-subtle);
+      border-top: 2px solid var(--gold); border-radius: 6px; padding: 30px 28px; transition: all 0.28s ease;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.55); position: relative; overflow: hidden;
+    }
+    .principle-card::before {
+      content: ""; position: absolute; top: 0; left: -120%; width: 65%; height: 100%;
+      background: linear-gradient(115deg, transparent 0%, rgba(249,226,156,0.14) 50%, transparent 100%);
+      transform: skewX(-25deg); transition: left 0.65s ease; pointer-events: none;
+    }
+    .principle-card:hover::before { left: 140%; }
+    .principle-card:hover { background: var(--bg-elevated); border-color: var(--gold-bright); transform: translateY(-4px); box-shadow: 0 16px 36px rgba(212, 175, 55, 0.2); }
+    .principle-card h3 { font-family: 'Cinzel', Georgia, serif; font-size: 1.15rem; font-weight: 700; color: var(--gold-bright); margin-bottom: 10px; }
+    .principle-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.65; }
+
+    .legal-notice {
+      margin: 72px 0 32px; padding: 32px; background: rgba(8, 11, 18, 0.78); backdrop-filter: blur(10px);
+      border: 1px solid var(--border-subtle); border-radius: 6px; color: var(--text-muted); font-size: 0.85rem; line-height: 1.65;
+    }
+    .legal-notice h3 { font-family: 'Cinzel', Georgia, serif; font-size: 0.95rem; color: var(--gold-bright); margin-bottom: 12px; }
+    .legal-notice p { margin-bottom: 12px; }
+
+    footer {
+      text-align: center; border: 1px solid var(--border-subtle); border-top: 2px solid var(--gold-border);
+      color: var(--text-muted); font-size: 0.88rem; background: var(--bg-surface); backdrop-filter: blur(10px);
+      border-radius: 6px; padding: 28px 24px; box-shadow: 0 12px 32px rgba(0,0,0,0.6);
+    }
+    footer a { color: var(--gold-bright); text-decoration: none; font-weight: 600; }
+    footer a:hover { color: #fff; text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <div class="bg-animation">
+    <div class="stars"></div>
+    <div class="stars2"></div>
+    <div class="stars3"></div>
+  </div>
+
+  <div class="wrapper">
+    <header>
+      <div class="logo-frame">
+        <img src="One%20Nation%20Logo.jpg" alt="One Nation Restoration of the Republic Emblem" class="logo-img" />
+      </div>
+      <span class="eyebrow">𓋹 Structure • Unity • Sovereignty 𓋹</span>
+      <h1>ONE NATION REPUBLIC</h1>
+      <p class="hero-sub">Strong, informed communities rooted in lawful principles, personal responsibility, and economic cooperation.</p>
+      <div class="cta-group">
+        <a href="https://one-nation-info.mn.co/plans/2003708?bundle_token=3a23848fa6f487fae4ee3cda4fb9934a&utm_source=manual" class="btn-primary" target="_blank" rel="noopener noreferrer">Enter the One Nation Community (30 Days Free)</a>
+        <a href="links.html" class="btn-secondary">❖ Classes, Library &amp; Official Links</a>
+      </div>
+    </header>
+
+    <section class="foundation-card">
+      <span class="section-label">❖ Purpose &amp; Groundwork</span>
+      <h2>Laying the Foundation</h2>
+      <p>One Nation was created to bring structure, education, and economic cooperation back to the people. The app and website serve as tools — spaces to connect, study, build, and organize. They are not the end goal. They are the foundation for something greater: strong, informed communities rooted in lawful principles and personal responsibility.</p>
+      <p>We do not gatekeep knowledge. We believe education should be accessible to those willing to study and apply it with discipline. When individuals understand systems, they can navigate them intelligently and build alternatives where necessary.</p>
+      <p>Our long-term objective is clear — to contribute to the restoration of the Republic by strengthening individuals first. Informed people create stable families. Stable families create strong communities. Strong communities create lasting change.</p>
+      <div class="foundation-callout">
+        <p>One Nation exists to connect builders, not spectators.</p>
+        <p class="pillars">This is about structure. This is about unity. This is about laying groundwork that outlives the platform itself.</p>
+      </div>
+    </section>
+
+    <div class="mv-grid">
+      <section class="panel">
+        <span class="section-label">❖ Why We Stand</span>
+        <h2>Our Mission</h2>
+        <p style="margin-bottom:0;">The One Nation Republic is founded on the timeless principles of freedom, sovereignty, and God’s law. Rooted in the spirit of liberty portrayed in <em>V for Vendetta</em> and guided by the constitutional ideals of the American Republic, our mission is to create a society where every individual has the opportunity to live with dignity, purpose, and prosperity.</p>
+      </section>
+
+      <section class="panel">
+        <span class="section-label">❖ The Future We Build</span>
+        <h2>Our Vision</h2>
+        <p class="vision-intro">We envision a beautiful future where:</p>
+        <ul class="vision-list">
+          <li>Free food, housing, and resources are made available for all.</li>
+          <li>A fair and just system protects the sovereignty of each man and woman.</li>
+          <li>Families are nurtured and encouraged to thrive, securing generational growth and prosperity.</li>
+          <li>Tribal unity strengthens community bonds while honoring individuality.</li>
+          <li>A reformed government, self-sufficient under the Empire of Ameruk, guarantees equality, justice, and representation for every sovereign tribe.</li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="principles-section">
+      <span class="section-label">❖ Foundational Pillars</span>
+      <h2>Our Principles</h2>
+      <div class="principles-grid">
+        <div class="principle-card">
+          <h3>Constitutional Republic</h3>
+          <p>A republican form of governing ensures fairness, equality, and representation of the people.</p>
+        </div>
+        <div class="principle-card">
+          <h3>Freedom &amp; Sovereignty</h3>
+          <p>Each citizen is sovereign, free to think, create, and live without unjust interference.</p>
+        </div>
+        <div class="principle-card">
+          <h3>God’s Law</h3>
+          <p>A moral compass that guides us toward justice, truth, and righteousness.</p>
+        </div>
+        <div class="principle-card">
+          <h3>Fair Living</h3>
+          <p>Systems that provide equity, opportunity, and the security of essential needs.</p>
+        </div>
+        <div class="principle-card">
+          <h3>Intellectual &amp; Economic Growth</h3>
+          <p>Fostering innovation, education, and sustainable commerce to benefit all.</p>
+        </div>
+        <div class="principle-card">
+          <h3>Unity &amp; Strength</h3>
+          <p>Sovereign tribes working together in harmony, ensuring balance between self-determination and collective well-being.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="legal-notice">
+      <h3>❖ Legal &amp; Operational Notice</h3>
+      <p><strong>Disclaimer of Professional Advice:</strong> The educational materials, structural frameworks, and informational resources provided through One Nation Republic are for private study, community organization, and educational purposes only. Nothing published on this platform constitutes formal legal, tax, financial, or engineering advice. Participants and members operate under personal responsibility and are encouraged to exercise independent due diligence.</p>
+      <p><strong>Terms of Participation:</strong> Engagement with One Nation Republic tools, community spaces, and public portals is strictly voluntary. All intellectual property, foundational essays, and structural layouts remain protected under private copyright and lawful administration.</p>
+      <p style="margin-bottom:0;">&copy; 2026 One Nation Republic. All Rights Reserved. Operated under private administrative framework.</p>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 One Nation Republic. All Rights Reserved.</p>
+      <p style="margin-top: 10px;"><a href="links.html">❖ Explore The Book of Johnson Hub, Replays &amp; Official Links &rarr;</a></p>
+    </footer>
+  </div>
+
+</body>
+</html>
