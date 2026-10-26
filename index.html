@@ -6,16 +6,18 @@
   <title>One Nation Republic | Laying the Foundation</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg-deep: #000000;
-      --bg-surface: rgba(10, 14, 20, 0.85);
-      --bg-elevated: rgba(18, 24, 34, 0.95);
-      --border-subtle: #1e293b;
+      --bg-surface: rgba(10, 14, 22, 0.82);
+      --bg-elevated: rgba(18, 25, 38, 0.94);
+      --border-subtle: rgba(212, 175, 55, 0.18);
       --gold: #d4af37;
+      --gold-bright: #f9e29c;
+      --gold-deep: #99741f;
       --gold-soft: rgba(212, 175, 55, 0.12);
-      --gold-border: rgba(212, 175, 55, 0.4);
+      --gold-border: rgba(212, 175, 55, 0.45);
       --text-primary: #f8fafc;
       --text-secondary: #cbd5e1;
       --text-muted: #94a3b8;
@@ -25,6 +27,23 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+
+    ::selection {
+      background: var(--gold);
+      color: #000000;
+    }
+
+    /* Custom Gold Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #020305;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, var(--gold-deep), var(--gold), var(--gold-deep));
+      border-radius: 4px;
     }
 
     body {
@@ -45,7 +64,7 @@
       width: 100vw;
       height: 100vh;
       z-index: -1;
-      background: #000000;
+      background: radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.08) 0%, rgba(10, 15, 28, 0.4) 35%, #000000 75%);
       overflow: hidden;
     }
 
@@ -62,11 +81,11 @@
 
     .stars {
       background-image: radial-gradient(1px 1px at 25px 50px, #ffffff, rgba(0,0,0,0)),
-                        radial-gradient(1px 1px at 50px 100px, #d4af37, rgba(0,0,0,0)),
+                        radial-gradient(1.5px 1.5px at 50px 100px, #d4af37, rgba(0,0,0,0)),
                         radial-gradient(2px 2px at 150px 150px, #ffffff, rgba(0,0,0,0));
       background-repeat: repeat;
       background-size: 250px 250px;
-      opacity: 0.4;
+      opacity: 0.45;
       animation: driftStars 90s linear infinite;
     }
 
@@ -75,7 +94,7 @@
                         radial-gradient(1px 1px at 200px 80px, #ffffff, rgba(0,0,0,0));
       background-repeat: repeat;
       background-size: 350px 350px;
-      opacity: 0.6;
+      opacity: 0.65;
       animation: driftStars 140s linear infinite;
     }
 
@@ -84,7 +103,7 @@
                         radial-gradient(1.5px 1.5px at 250px 250px, #d4af37, rgba(0,0,0,0));
       background-repeat: repeat;
       background-size: 450px 450px;
-      opacity: 0.3;
+      opacity: 0.35;
       animation: driftStars 200s linear infinite;
     }
 
@@ -93,413 +112,81 @@
       to { transform: translateY(-50%); }
     }
 
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes rotateSlow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes rotateReverse {
+      from { transform: rotate(360deg); }
+      to { transform: rotate(0deg); }
+    }
+
+    @keyframes pulseHalo {
+      0%, 100% { box-shadow: 0 0 40px rgba(212, 175, 55, 0.22), inset 0 0 20px rgba(212, 175, 55, 0.15); }
+      50% { box-shadow: 0 0 65px rgba(212, 175, 55, 0.45), inset 0 0 30px rgba(212, 175, 55, 0.25); }
+    }
+
+    @keyframes goldShimmer {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
     .wrapper {
       max-width: 1040px;
       margin: 0 auto;
-      padding: 60px 24px 80px;
+      padding: 64px 24px 90px;
       position: relative;
       z-index: 1;
+      animation: fadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
 
     /* Hero Header */
     header {
       text-align: center;
-      padding: 40px 0 56px;
-      border-bottom: 1px solid var(--border-subtle);
+      padding: 40px 0 64px;
       margin-bottom: 64px;
       display: flex;
       flex-direction: column;
       align-items: center;
+      position: relative;
+    }
+
+    /* Tapered Golden Bottom Divider on Header */
+    header::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 10%;
+      width: 80%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, var(--gold-border) 25%, var(--gold-bright) 50%, var(--gold-border) 75%, transparent 100%);
     }
 
     .logo-frame {
       position: relative;
-      padding: 6px;
+      padding: 8px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--gold) 0%, transparent 50%, var(--gold) 100%);
-      box-shadow: 0 0 40px rgba(212, 175, 55, 0.25);
-      margin-bottom: 32px;
-    }
-
-    .logo-img {
-      width: 220px;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 2px solid var(--bg-deep);
-      display: block;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--gold);
-      background: var(--bg-surface);
-      border: 1px solid var(--gold-border);
-      padding: 6px 16px;
-      border-radius: 2px;
-      margin-bottom: 20px;
-      backdrop-filter: blur(8px);
-    }
-
-    h1 {
-      font-family: 'Cinzel', Georgia, serif;
-      font-size: clamp(2.2rem, 5vw, 3.4rem);
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      color: var(--text-primary);
-      margin-bottom: 16px;
-      text-shadow: 0 2px 12px rgba(0,0,0,0.9);
-    }
-
-    .hero-sub {
-      font-size: 1.1rem;
-      color: var(--text-muted);
-      max-width: 640px;
-      margin: 0 auto 32px;
-      font-weight: 400;
-      text-shadow: 0 1px 4px rgba(0,0,0,0.8);
-    }
-
-    .cta-group {
+      background: linear-gradient(135deg, var(--gold-bright) 0%, var(--gold-deep) 50%, var(--gold) 100%);
+      animation: pulseHalo 5s ease-in-out infinite;
+      margin-bottom: 36px;
       display: flex;
+      align-items: center;
       justify-content: center;
-      gap: 16px;
-      flex-wrap: wrap;
     }
 
-    .btn-primary {
-      display: inline-block;
-      background: var(--gold);
-      color: #000000;
-      font-weight: 600;
-      font-size: 0.95rem;
-      letter-spacing: 0.04em;
-      text-decoration: none;
-      padding: 14px 32px;
-      border-radius: 4px;
-      transition: all 0.2s ease;
-      box-shadow: 0 4px 16px rgba(212, 175, 55, 0.3);
-    }
-
-    .btn-primary:hover {
-      background: #e6c55c;
-      transform: translateY(-2px);
-    }
-
-    .btn-secondary {
-      display: inline-block;
-      background: var(--bg-surface);
-      backdrop-filter: blur(8px);
-      color: var(--gold);
-      border: 1px solid var(--gold-border);
-      font-weight: 600;
-      font-size: 0.95rem;
-      letter-spacing: 0.04em;
-      text-decoration: none;
-      padding: 14px 32px;
-      border-radius: 4px;
-      transition: all 0.2s ease;
-    }
-
-    .btn-secondary:hover {
-      background: var(--gold-soft);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(212, 175, 55, 0.2);
-    }
-
-    /* Section Headings */
-    .section-label {
-      font-size: 0.78rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: var(--gold);
-      margin-bottom: 10px;
-      display: block;
-    }
-
-    h2 {
-      font-family: 'Cinzel', Georgia, serif;
-      font-size: clamp(1.6rem, 3vw, 2.1rem);
-      letter-spacing: 0.06em;
-      color: var(--text-primary);
-      margin-bottom: 24px;
-    }
-
-    /* Foundation Block */
-    .foundation-card {
-      background: var(--bg-surface);
-      backdrop-filter: blur(10px);
-      border: 1px solid var(--border-subtle);
-      border-top: 3px solid var(--gold);
-      border-radius: 6px;
-      padding: clamp(28px, 5vw, 48px);
-      margin-bottom: 64px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-    }
-
-    .foundation-card p {
-      color: var(--text-secondary);
-      font-size: 1.06rem;
-      margin-bottom: 20px;
-    }
-
-    .foundation-callout {
-      margin-top: 30px;
-      padding: 22px 26px;
-      background: var(--bg-elevated);
-      border-left: 3px solid var(--gold);
-      border-radius: 0 4px 4px 0;
-    }
-
-    .foundation-callout p {
-      color: var(--text-primary);
-      font-weight: 500;
-      font-size: 1.08rem;
-      margin-bottom: 8px;
-    }
-
-    .foundation-callout .pillars {
-      color: var(--gold);
-      font-family: 'Cinzel', Georgia, serif;
-      font-weight: 600;
-      font-size: 1.05rem;
-      letter-spacing: 0.03em;
-      margin-bottom: 0;
-    }
-
-    /* Mission & Vision Layout */
-    .mv-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 32px;
-      margin-bottom: 64px;
-    }
-
-    .panel {
-      background: var(--bg-surface);
-      backdrop-filter: blur(10px);
-      border: 1px solid var(--border-subtle);
-      border-radius: 6px;
-      padding: clamp(28px, 4vw, 40px);
-      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5);
-    }
-
-    .panel p {
-      color: var(--text-secondary);
-      font-size: 1.05rem;
-    }
-
-    .vision-intro {
-      margin-bottom: 20px;
-      color: var(--text-secondary);
-      font-size: 1.05rem;
-    }
-
-    .vision-list {
-      list-style: none;
-      display: grid;
-      gap: 14px;
-    }
-
-    .vision-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      background: var(--bg-elevated);
-      border: 1px solid var(--border-subtle);
-      padding: 16px 20px;
-      border-radius: 4px;
-      color: var(--text-primary);
-      font-size: 0.98rem;
-    }
-
-    .vision-list li::before {
-      content: "◆";
-      color: var(--gold);
-      font-size: 0.85rem;
-      margin-top: 2px;
-      flex-shrink: 0;
-    }
-
-    /* Principles Grid */
-    .principles-section {
-      margin-bottom: 64px;
-    }
-
-    .principles-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-      gap: 24px;
-      margin-top: 28px;
-    }
-
-    .principle-card {
-      background: var(--bg-surface);
-      backdrop-filter: blur(10px);
-      border: 1px solid var(--border-subtle);
-      border-radius: 6px;
-      padding: 28px;
-      transition: border-color 0.2s ease, transform 0.2s ease;
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
-    }
-
-    .principle-card:hover {
-      border-color: var(--gold-border);
-      transform: translateY(-2px);
-    }
-
-    .principle-card h3 {
-      font-family: 'Cinzel', Georgia, serif;
-      font-size: 1.15rem;
-      color: var(--gold);
-      margin-bottom: 10px;
-      letter-spacing: 0.04em;
-    }
-
-    .principle-card p {
-      color: var(--text-secondary);
-      font-size: 0.95rem;
-      line-height: 1.65;
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      border-top: 1px solid var(--border-subtle);
-      padding-top: 36px;
-      color: var(--text-muted);
-      font-size: 0.88rem;
-      letter-spacing: 0.03em;
-      background: var(--bg-surface);
-      backdrop-filter: blur(10px);
-      border-radius: 6px;
-      padding: 24px;
-    }
-
-    footer a {
-      color: var(--gold);
-      text-decoration: none;
-      font-weight: 500;
-    }
-  </style>
-</head>
-<body>
-
-  <!-- PURE BLACK & STARS CELESTIAL BACKGROUND -->
-  <div class="bg-animation">
-    <div class="stars"></div>
-    <div class="stars2"></div>
-    <div class="stars3"></div>
-  </div>
-
-  <div class="wrapper">
-
-    <!-- HERO -->
-    <header>
-      <div class="logo-frame">
-        <img src="One%20Nation%20Logo.jpg" alt="One Nation Restoration of the Republic Emblem" class="logo-img" />
-      </div>
-      <span class="eyebrow">𓋹 Structure • Unity • Sovereignty 𓋹</span>
-      <h1>ONE NATION REPUBLIC</h1>
-      <p class="hero-sub">Strong, informed communities rooted in lawful principles, personal responsibility, and economic cooperation.</p>
-      <div class="cta-group">
-        <a href="https://one-nation-info.mn.co/plans/2003708?bundle_token=3a23848fa6f487fae4ee3cda4fb9934a&utm_source=manual" class="btn-primary" target="_blank" rel="noopener noreferrer">Enter the One Nation Community (30 Days Free)</a>
-        <a href="links.html" class="btn-secondary">Classes, Library &amp; Official Links</a>
-      </div>
-    </header>
-
-    <!-- LAYING THE FOUNDATION -->
-    <section class="foundation-card">
-      <span class="section-label">Purpose &amp; Groundwork</span>
-      <h2>Laying the Foundation</h2>
-      <p>One Nation was created to bring structure, education, and economic cooperation back to the people. The app and website serve as tools — spaces to connect, study, build, and organize. They are not the end goal. They are the foundation for something greater: strong, informed communities rooted in lawful principles and personal responsibility.</p>
-      <p>We do not gatekeep knowledge. We believe education should be accessible to those willing to study and apply it with discipline. When individuals understand systems, they can navigate them intelligently and build alternatives where necessary.</p>
-      <p>Our long-term objective is clear — to contribute to the restoration of the Republic by strengthening individuals first. Informed people create stable families. Stable families create strong communities. Strong communities create lasting change.</p>
-      <div class="foundation-callout">
-        <p>One Nation exists to connect builders, not spectators.</p>
-        <p class="pillars">This is about structure. This is about unity. This is about laying groundwork that outlives the platform itself.</p>
-      </div>
-    </section>
-
-    <!-- MISSION & VISION -->
-    <div class="mv-grid">
-      <section class="panel">
-        <span class="section-label">Why We Stand</span>
-        <h2>Our Mission</h2>
-        <p>The One Nation Republic is founded on the timeless principles of freedom, sovereignty, and God’s law. Rooted in the spirit of liberty portrayed in <em>V for Vendetta</em> and guided by the constitutional ideals of the American Republic, our mission is to create a society where every individual has the opportunity to live with dignity, purpose, and prosperity.</p>
-      </section>
-
-      <section class="panel">
-        <span class="section-label">The Future We Build</span>
-        <h2>Our Vision</h2>
-        <p class="vision-intro">We envision a beautiful future where:</p>
-        <ul class="vision-list">
-          <li>Free food, housing, and resources are made available for all.</li>
-          <li>A fair and just system protects the sovereignty of each man and woman.</li>
-          <li>Families are nurtured and encouraged to thrive, securing generational growth and prosperity.</li>
-          <li>Tribal unity strengthens community bonds while honoring individuality.</li>
-          <li>A reformed government, self-sufficient under the Empire of Ameruk, guarantees equality, justice, and representation for every sovereign tribe.</li>
-        </ul>
-      </section>
-    </div>
-
-    <!-- PRINCIPLES -->
-    <section class="principles-section">
-      <span class="section-label">Foundational Pillars</span>
-      <h2>Our Principles</h2>
-      <div class="principles-grid">
-        <div class="principle-card">
-          <h3>Constitutional Republic</h3>
-          <p>A republican form of governing ensures fairness, equality, and representation of the people.</p>
-        </div>
-        <div class="principle-card">
-          <h3>Freedom &amp; Sovereignty</h3>
-          <p>Each citizen is sovereign, free to think, create, and live without unjust interference.</p>
-        </div>
-        <div class="principle-card">
-          <h3>God’s Law</h3>
-          <p>A moral compass that guides us toward justice, truth, and righteousness.</p>
-        </div>
-        <div class="principle-card">
-          <h3>Fair Living</h3>
-          <p>Systems that provide equity, opportunity, and the security of essential needs.</p>
-        </div>
-        <div class="principle-card">
-          <h3>Intellectual &amp; Economic Growth</h3>
-          <p>Fostering innovation, education, and sustainable commerce to benefit all.</p>
-        </div>
-        <div class="principle-card">
-          <h3>Unity &amp; Strength</h3>
-          <p>Sovereign tribes working together in harmony, ensuring balance between self-determination and collective well-being.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- LEGAL & DISCLAIMERS FOOTER SECTION -->
-    <section style="margin-top: 80px; padding-top: 40px; border-top: 1px solid var(--border-subtle); color: var(--text-muted); font-size: 0.85rem; line-height: 1.6;">
-      <h3 style="font-family: 'Cinzel', Georgia, serif; font-size: 0.95rem; color: var(--gold); margin-bottom: 12px; letter-spacing: 0.05em;">Legal &amp; Operational Notice</h3>
-      <p style="margin-bottom: 12px;">
-        <strong>Disclaimer of Professional Advice:</strong> The educational materials, structural frameworks, and informational resources provided through One Nation Republic are for private study, community organization, and educational purposes only. Nothing published on this platform constitutes formal legal, tax, financial, or engineering advice. Participants and members operate under personal responsibility and are encouraged to exercise independent due diligence.
-      </p>
-      <p style="margin-bottom: 12px;">
-        <strong>Terms of Participation:</strong> Engagement with One Nation Republic tools, community spaces, and public portals is strictly voluntary. All intellectual property, foundational essays, and structural layouts remain protected under private copyright and lawful administration.
-      </p>
-      <p style="margin-bottom: 0;">
-        &copy; 2026 One Nation Republic. All Rights Reserved. Operated under private administrative framework.
-      </p>
-    </section>
-
-    <footer>
-      <p>&copy; 2026 One Nation Republic. All Rights Reserved.</p>
-      <p style="margin-top: 8px;"><a href="links.html">Explore The Book of Johnson Hub, Replays &amp; Official Links &rarr;</a></p>
-    </footer>
-
-  </div>
-
-</body>
-</html>
+    /* Outer Rotating Astrolabe Ring */
+    .logo-frame::before {
+      content: "";
