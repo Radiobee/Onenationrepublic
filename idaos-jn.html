@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IDAOS | Intelligent Deployment &amp; Asset Operating System — One Nation Republic</title>
+  <meta name="description" content="Public License &amp; Sovereign Deployment Package for IDAOS. Local-first SHA-256 cryptographic hashing and OpenTimestamps (.ots) Bitcoin blockchain anchoring under UCC Article 12 and FRE 902(14)." />
+  <meta property="og:title" content="IDAOS | Intelligent Deployment &amp; Asset Operating System ($149)" />
+  <meta property="og:description" content="Local-first SHA-256 cryptographic hashing and OpenTimestamps (.ots) Bitcoin blockchain anchoring utility for Controllable Electronic Records under UCC Article 12 and FRE 902(14)." />
+  <meta property="og:image" content="https://onenationrepublic.com/IDAOS%20ONR%20LOGO.jpg" />
+  <meta property="og:url" content="https://onenationrepublic.com/idaos-jn.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-deep: #000000;
+      --bg-surface: rgba(10, 14, 22, 0.82);
+      --bg-elevated: rgba(18, 25, 38, 0.94);
+      --border-subtle: rgba(212, 175, 55, 0.18);
+      --gold: #d4af37;
+      --gold-bright: #f9e29c;
+      --gold-deep: #99741f;
+      --gold-border: rgba(212, 175, 55, 0.45);
+      --text-primary: #f8fafc;
+      --text-secondary: #cbd5e1;
+      --text-muted: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    ::selection { background: var(--gold); color: #000; }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #020305; }
+    ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, var(--gold-deep), var(--gold), var(--gold-deep)); border-radius: 4px; }
+
+    body {
+      background-color: var(--bg-deep);
+      color: var(--text-primary);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Dynamic Celestial Starfield */
+    .bg-animation {
+      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1;
+      background: radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.08) 0%, rgba(10, 15, 28, 0.4) 35%, #000000 75%);
+      overflow: hidden;
+    }
+    .stars, .stars2, .stars3 { position: absolute; inset: 0; width: 100%; height: 200%; display: block; background-repeat: repeat; }
+    .stars {
+      background-image: radial-gradient(1px 1px at 25px 50px, #fff, transparent), radial-gradient(1.5px 1.5px at 50px 100px, #d4af37, transparent), radial-gradient(2px 2px at 150px 150px, #fff, transparent);
+      background-size: 250px 250px; opacity: 0.45; animation: driftStars 90s linear infinite;
+    }
+    .stars2 {
+      background-image: radial-gradient(1.5px 1.5px at 80px 120px, #d4af37, transparent), radial-gradient(1px 1px at 200px 80px, #fff, transparent);
+      background-size: 350px 350px; opacity: 0.65; animation: driftStars 140s linear infinite;
+    }
+    .stars3 {
+      background-image: radial-gradient(2px 2px at 50px 200px, #fff, transparent), radial-gradient(1.5px 1.5px at 250px 250px, #d4af37, transparent);
+      background-size: 450px 450px; opacity: 0.35; animation: driftStars 200s linear infinite;
+    }
+
+    @keyframes driftStars { from { transform: translateY(0); } to { transform: translateY(-50%); } }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes rotateSlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    @keyframes rotateReverse { from { transform: rotate(360deg); } to { transform: rotate(0deg); } }
+    @keyframes pulseHalo {
+      0%, 100% { box-shadow: 0 0 40px rgba(212, 175, 55, 0.22), inset 0 0 20px rgba(212, 175, 55, 0.15); }
+      50% { box-shadow: 0 0 65px rgba(212, 175, 55, 0.45), inset 0 0 30px rgba(212, 175, 55, 0.25); }
+    }
+    @keyframes goldShimmer { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+
+    .wrapper { max-width: 1040px; margin: 0 auto; padding: 64px 24px 90px; position: relative; z-index: 1; animation: fadeUp 0.85s ease forwards; }
+
+    /* Hero Header */
+    header { text-align: center; padding: 40px 0 64px; margin-bottom: 64px; display: flex; flex-direction: column; align-items: center; position: relative; }
+    header::after {
+      content: ""; position: absolute; bottom: 0; left: 10%; width: 80%; height: 1px;
+      background: linear-gradient(90deg, transparent 0%, var(--gold-border) 25%, var(--gold-bright) 50%, var(--gold-border) 75%, transparent 100%);
+    }
+    .logo-frame {
+      position: relative; padding: 8px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold-bright) 0%, var(--gold-deep) 50%, var(--gold) 100%);
+      animation: pulseHalo 5s ease-in-out infinite; margin-bottom: 36px; display: flex; align-items: center; justify-content: center;
+    }
+    .logo-frame::before {
+      content: ""; position: absolute; inset: -12px; border-radius: 50%;
+      border: 1px dashed rgba(212, 175, 55, 0.55); animation: rotateSlow 45s linear infinite; pointer-events: none;
+    }
+    .logo-frame::after {
+      content: ""; position: absolute; inset: -22px; border-radius: 50%;
+      border: 1px solid rgba(212, 175, 55, 0.18); border-top-color: var(--gold); border-bottom-color: var(--gold);
+      animation: rotateReverse 30s linear infinite; pointer-events: none;
+    }
+    .logo-img { width: 230px; height: 230px; object-fit: cover; border-radius: 50%; border: 3px solid #000; display: block; position: relative; z-index: 2; }
+
+    .eyebrow {
+      display: inline-block; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--gold-bright); background: linear-gradient(90deg, rgba(212,175,55,0.05) 0%, rgba(212,175,55,0.18) 50%, rgba(212,175,55,0.05) 100%);
+      border: 1px solid var(--gold-border); padding: 7px 20px; border-radius: 2px; margin-bottom: 20px; backdrop-filter: blur(8px);
+    }
+    h1 {
+      font-family: 'Cinzel', Georgia, serif; font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 800; letter-spacing: 0.1em;
+      background: linear-gradient(120deg, #fff 0%, var(--gold-bright) 35%, var(--gold) 65%, #fff 100%);
+      background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      animation: goldShimmer 8s ease infinite; margin-bottom: 12px; filter: drop-shadow(0 4px 16px rgba(0,0,0,0.9));
+    }
+    .hero-title-sub {
+      font-family: 'Cinzel', Georgia, serif; font-size: clamp(1rem, 2.2vw, 1.35rem); font-weight: 700;
+      color: var(--gold-bright); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 20px;
+    }
+    .hero-sub { font-size: 1.12rem; color: var(--text-secondary); max-width: 720px; margin: 0 auto 28px; text-shadow: 0 2px 6px rgba(0,0,0,0.9); }
+
+    .price-pill {
+      display: inline-block; font-family: 'Cinzel', Georgia, serif; font-size: 1.05rem; font-weight: 700;
+      color: var(--gold-bright); background: rgba(212, 175, 55, 0.12); border: 1px solid var(--gold-border);
+      padding: 8px 24px; border-radius: 4px; margin-bottom: 28px; letter-spacing: 0.08em;
+    }
+
+    .cta-group { display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-block; background: linear-gradient(135deg, var(--gold-bright) 0%, var(--gold) 50%, #b88f28 100%);
+      color: #000; font-family: 'Cinzel', Georgia, serif; font-weight: 800; font-size: 0.96rem; letter-spacing: 0.06em;
+      text-transform: uppercase; text-decoration: none; padding: 16px 38px; border-radius: 4px; transition: all 0.28s ease;
+      box-shadow: 0 6px 24px rgba(212, 175, 55, 0.35);
+    }
+    .btn-primary:hover { transform: translateY(-3px) scale(1.01); box-shadow: 0 12px 32px rgba(249, 226, 156, 0.5); }
+    .btn-secondary {
+      display: inline-block; background: var(--bg-surface); backdrop-filter: blur(10px); color: var(--gold-bright);
+      border: 1px solid var(--gold-border); font-family: 'Cinzel', Georgia, serif; font-weight: 700; font-size: 0.92rem;
+      letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; padding: 16px 32px; border-radius: 4px; transition: all 0.28s ease;
+    }
+    .btn-secondary:hover { background: rgba(212, 175, 55, 0.18); border-color: var(--gold-bright); color: #fff; transform: translateY(-3px); }
+
+    .no-refund-micro {
+      margin-top: 18px; font-size: 0.82rem; color: var(--text-muted); letter-spacing: 0.04em;
+    }
+    .no-refund-micro strong { color: var(--gold-bright); }
+
+    /* Sections & Cards */
+    .section-label { font-size: 0.76rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.24em; color: var(--gold-bright); margin-bottom: 10px; display: block; }
+    h2 { font-family: 'Cinzel', Georgia, serif; font-size: clamp(1.65rem, 3vw, 2.15rem); font-weight: 700; letter-spacing: 0.06em; color: var(--text-primary); margin-bottom: 24px; }
+
+    .foundation-card {
+      background: linear-gradient(160deg, rgba(16, 22, 34, 0.88) 0%, rgba(8, 11, 18, 0.92) 100%);
+      backdrop-filter: blur(12px); border: 1px solid var(--border-subtle); border-top: 3px solid var(--gold);
+      border-radius: 6px; padding: clamp(30px, 5vw, 52px); margin-bottom: 64px; box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+    }
+    .foundation-card p { color: var(--text-secondary); font-size: 1.06rem; margin-bottom: 20px; }
+    .foundation-callout {
+      margin-top: 32px; padding: 24px 28px; background: linear-gradient(135deg, rgba(212, 175, 55, 0.14) 0%, rgba(14, 20, 30, 0.95) 100%);
+      border: 1px solid var(--gold-border); border-left: 4px solid var(--gold-bright); border-radius: 0 4px 4px 0;
+    }
+    .foundation-callout p { color: var(--text-primary); font-weight: 500; font-size: 1.08rem; margin-bottom: 8px; }
+    .foundation-callout .pillars { color: var(--gold-bright); font-family: 'Cinzel', Georgia, serif; font-weight: 700; font-size: 1.06rem; margin-bottom: 0; }
+
+    .mv-grid { display: grid; grid-template-columns: 1fr; gap: 32px; margin-bottom: 64px; }
+    .panel {
+      background: var(--bg-surface); backdrop-filter: blur(12px); border: 1px solid var(--border-subtle);
+      border-left: 3px solid var(--gold); border-radius: 6px; padding: clamp(28px, 4vw, 44px); box-shadow: 0 16px 40px rgba(0,0,0,0.6); transition: all 0.28s ease;
+    }
+    .panel:hover { border-color: var(--gold-border); box-shadow: 0 20px 44px rgba(212, 175, 55, 0.12); }
+    .panel p, .vision-intro { color: var(--text-secondary); font-size: 1.05rem; margin-bottom: 20px; }
+    .vision-list { list-style: none; display: grid; gap: 14px; }
+    .vision-list li {
+      display: flex; align-items: flex-start; gap: 14px; background: var(--bg-elevated);
+      border: 1px solid var(--border-subtle); padding: 16px 22px; border-radius: 4px; color: var(--text-primary); font-size: 0.98rem; transition: all 0.22s ease;
+    }
+    .vision-list li:hover { border-color: var(--gold-border); transform: translateX(4px); }
+    .vision-list li::before { content: "❖"; color: var(--gold-bright); font-size: 0.85rem; margin-top: 2px; flex-shrink: 0; }
+
+    .principles-section { margin-bottom: 64px; }
+    .principles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 24px; margin-top: 28px; }
+    .principle-card {
+      background: var(--bg-surface); backdrop-filter: blur(12px); border: 1px solid var(--border-subtle);
+      border-top: 2px solid var(--gold); border-radius: 6px; padding: 30px 28px; transition: all 0.28s ease;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.55); position: relative; overflow: hidden;
+    }
+    .principle-card::before {
+      content: ""; position: absolute; top: 0; left: -120%; width: 65%; height: 100%;
+      background: linear-gradient(115deg, transparent 0%, rgba(249,226,156,0.14) 50%, transparent 100%);
+      transform: skewX(-25deg); transition: left 0.65s ease; pointer-events: none;
+    }
+    .principle-card:hover::before { left: 140%; }
+    .principle-card:hover { background: var(--bg-elevated); border-color: var(--gold-bright); transform: translateY(-4px); box-shadow: 0 16px 36px rgba(212, 175, 55, 0.2); }
+    .principle-card h3 { font-family: 'Cinzel', Georgia, serif; font-size: 1.15rem; font-weight: 700; color: var(--gold-bright); margin-bottom: 10px; }
+    .principle-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.65; }
+
+    /* Dedicated Checkout Box */
+    .checkout-vault {
+      text-align: center; background: linear-gradient(160deg, rgba(18, 25, 38, 0.95) 0%, rgba(8, 11, 18, 0.98) 100%);
+      border: 1px solid var(--gold-border); border-top: 3px solid var(--gold-bright); border-radius: 6px;
+      padding: clamp(32px, 5vw, 56px); margin-bottom: 64px; box-shadow: 0 24px 60px rgba(0,0,0,0.85);
+    }
+    .checkout-price {
+      font-family: 'Cinzel', Georgia, serif; font-size: clamp(2.2rem, 4vw, 3rem); font-weight: 800;
+      color: var(--gold-bright); margin: 12px 0 8px;
+    }
+    .terms-warning-box {
+      max-width: 760px; margin: 24px auto 32px; padding: 18px 24px;
+      background: rgba(212, 175, 55, 0.08); border: 1px solid var(--gold-border); border-radius: 4px;
+      color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; text-align: left;
+    }
+    .terms-warning-box strong { color: var(--gold-bright); }
+
+    .legal-notice {
+      margin: 72px 0 32px; padding: 32px; background: rgba(8, 11, 18, 0.78); backdrop-filter: blur(10px);
+      border: 1px solid var(--border-subtle); border-radius: 6px; color: var(--text-muted); font-size: 0.85rem; line-height: 1.65;
+    }
+    .legal-notice h3 { font-family: 'Cinzel', Georgia, serif; font-size: 0.95rem; color: var(--gold-bright); margin-bottom: 12px; }
+    .legal-notice p { margin-bottom: 12px; }
+    .legal-notice a { color: var(--gold-bright); text-decoration: none; }
+    .legal-notice a:hover { text-decoration: underline; }
+
+    footer {
+      text-align: center; border: 1px solid var(--border-subtle); border-top: 2px solid var(--gold-border);
+      color: var(--text-muted); font-size: 0.88rem; background: var(--bg-surface); backdrop-filter: blur(10px);
+      border-radius: 6px; padding: 28px 24px; box-shadow: 0 12px 32px rgba(0,0,0,0.6);
+    }
+    footer a { color: var(--gold-bright); text-decoration: none; font-weight: 600; }
+    footer a:hover { color: #fff; text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <div class="bg-animation">
+    <div class="stars"></div>
+    <div class="stars2"></div>
+    <div class="stars3"></div>
+  </div>
+
+  <div class="wrapper">
+    <header>
+      <div class="logo-frame">
+        <img src="IDAOS%20ONR%20LOGO.jpg" alt="IDAOS Intelligent Deployment and Asset Operating System Emblem" class="logo-img" />
+      </div>
+      <span class="eyebrow">𓋹 Sovereign Architecture • UCC Art. 12 • FRE 902(14) 𓋹</span>
+      <h1>IDAOS</h1>
+      <div class="hero-title-sub">Intelligent Deployment &amp; Asset Operating System</div>
+      <p class="hero-sub">Local-first SHA-256 cryptographic hashing and OpenTimestamps (.ots) Bitcoin blockchain anchoring utility for Controllable Electronic Records (CER) on your own hardware.</p>
+      <div class="price-pill">❖ Public License &amp; Sovereign Deployment Package — $149.00 USD (One-Time) ❖</div>
+      <div class="cta-group">
+        <a href="https://buy.stripe.com/4gM14pbZC0hpf6j8X0djO03" class="btn-primary" target="_blank" rel="noopener noreferrer">⚡ Deploy IDAOS Now — $149</a>
+        <a href="index.html" class="btn-secondary">❖ Return to One Nation Main Site</a>
+      </div>
+      <p class="no-refund-micro">Provided strictly <strong>AS-IS</strong> with zero technical support. <strong>ALL SALES ARE FINAL — STRICTLY NO REFUNDS.</strong></p>
+    </header>
+
+    <section class="foundation-card">
+      <span class="section-label">❖ Sovereign Infrastructure &amp; Blind Notary Engine</span>
+      <h2>Stop Relying on Third-Party Clouds</h2>
+      <p>When individuals understand systems, they can navigate them intelligently and build independent alternatives where necessary. IDAOS (Intelligent Deployment &amp; Asset Operating System) was engineered to put institutional-grade cryptographic record perfection directly onto your local machine — avoiding recurring cloud rent, third-party custody risks, and external middlemen.</p>
+      <p>Operating as a local-first, air-gapped blind notary utility, IDAOS computes immutable SHA-256 digests of your critical documents, contracts, intellectual property, and digital archives, compiles tamper-evident cryptographic manifests, and anchors verifiable OpenTimestamps (.ots) proofs directly to the decentralized Bitcoin blockchain.</p>
+      <div class="foundation-callout">
+        <p>One Nation exists to connect builders, not spectators.</p>
+        <p class="pillars">Own your infrastructure. Lock down your digital estate. Establish verifiable mathematical provenance.</p>
+      </div>
+    </section>
+
+    <div class="mv-grid">
+      <section class="panel">
+        <span class="section-label">❖ Statutory &amp; Evidentiary Architecture</span>
+        <h2>Built for Verifiable Provenance</h2>
+        <p style="margin-bottom:0;">IDAOS is structured around modern commercial and evidentiary frameworks for digital records. By pairing local SHA-256 cryptographic hashing with decentralized Bitcoin blockchain timestamping (.ots), the system generates verifiable digital artifacts aligned with <strong>Controllable Electronic Records (CER) under UCC Article 12</strong> and <strong>self-authenticating electronic evidence standards under Federal Rules of Evidence FRE 902(14)</strong>.</p>
+      </section>
+
+      <section class="panel">
+        <span class="section-label">❖ Inside the Sovereign Deployment Package</span>
+        <h2>Core Capabilities &amp; Deliverables</h2>
+        <p class="vision-intro">Your $149 one-time IDAOS Public License includes:</p>
+        <ul class="vision-list">
+          <li><strong>Local-First SHA-256 Cryptographic Compiler:</strong> Process individual files or entire directory payloads locally on your machine without uploading confidential contents to external servers.</li>
+          <li><strong>OpenTimestamps (.ots) Bitcoin Blockchain Anchoring:</strong> Automatically generate immutable blockchain receipts establishing mathematical proof of existence prior to a specific point in time.</li>
+          <li><strong>Tamper-Evident Manifest Generation:</strong> Compile clean, human-readable and machine-verifiable cryptographic manifests alongside every vaulted file.</li>
+          <li><strong>Sequential Master Ledger Indexing:</strong> Maintain an automated, continuously anchored CSV master ledger tracking every perfected record across your vault.</li>
+          <li><strong>Zero Monthly Software Subscriptions:</strong> Pay once ($149 USD) for your Public License &amp; Deployment Package with no recurring SaaS fees.</li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="principles-section">
+      <span class="section-label">❖ Technical Specifications</span>
+      <h2>Six Pillars of the IDAOS Engine</h2>
+      <div class="principles-grid">
+        <div class="principle-card">
+          <h3>Air-Gapped Privacy</h3>
+          <p>Your raw files stay on your hardware. Only anonymized cryptographic digests interact with calendar nodes to stamp your blockchain proofs.</p>
+        </div>
+        <div class="principle-card">
+          <h3>SHA-256 Digest Precision</h3>
+          <p>Industry-standard 256-bit cryptographic hashing detects even a single altered byte, providing immediate tamper detection across all vaulted files.</p>
+        </div>
+        <div class="principle-card">
+          <h3>Bitcoin (.ots) Anchoring</h3>
+          <p>Anchors cryptographic Merkle roots to the Bitcoin blockchain for decentralized, third-party-independent timestamp verification.</p>
+        </div>
+        <div class="principle-card">
+          <h3>UCC Article 12 Alignment</h3>
+          <p>Engineered to support the establishment and administration of Controllable Electronic Records (CER) within your private administrative vault.</p>
+        </div>
+        <div class="principle-card">
+          <h3>FRE 902(14) Readiness</h3>
+          <p>Generates structured hash manifests designed to streamline certification of records generated by an electronic process or system.</p>
+        </div>
+        <div class="principle-card">
+          <h3>Drop-Zone Automation</h3>
+          <p>Drop files or folders directly into your intake directory to automatically hash, manifest, vault, and timestamp in one workflow.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="checkout-vault">
+      <span class="section-label">❖ Instant Public Deployment</span>
+      <h2>Acquire Your IDAOS Public License</h2>
+      <div class="checkout-price">$149.00 USD</div>
+      <p style="color: var(--text-secondary); max-width: 620px; margin: 0 auto;">One-Time Payment • Public License &amp; Sovereign Deployment Package</p>
+
+      <div class="terms-warning-box">
+        <strong>MANDATORY CHECKOUT TERMS &amp; NO-REFUND NOTICE:</strong><br />
+        Public License &amp; Deployment Package for IDAOS. Includes local-first SHA-256 cryptographic hashing and OpenTimestamps (.ots) Bitcoin blockchain anchoring utility for Controllable Electronic Records (CER) under UCC Article 12 and FRE 902(14). Payment constitutes formal execution of the One Nation Republic LLC Software Evaluation NDA and As-Is SLA for IDAOS. <strong>Provided strictly AS-IS with zero technical support. ALL SALES ARE FINAL — STRICTLY NO REFUNDS.</strong> Contact <a href="mailto:onenationtroubleshooting@gmail.com" style="color: var(--gold-bright);">onenationtroubleshooting@gmail.com</a> for any billing or access issues.
+      </div>
+
+      <div class="cta-group">
+        <a href="https://buy.stripe.com/4gM14pbZC0hpf6j8X0djO03" class="btn-primary" target="_blank" rel="noopener noreferrer">⚡ Proceed to Secure Stripe Checkout ($149)</a>
+        <a href="links.html" class="btn-secondary">❖ Explore Official Hub &amp; Links</a>
+      </div>
+    </section>
+
+    <section class="legal-notice">
+      <h3>❖ Software Evaluation NDA, As-Is SLA &amp; No-Refund Policy</h3>
+      <p><strong>1. Grant of Limited Public License:</strong> Upon completion of the $149.00 USD checkout, One Nation Republic LLC ("Licensor") grants the purchaser ("Licensee") a limited, non-exclusive, non-transferable, and revocable license to deploy and operate IDAOS for local cryptographic asset hashing and timestamping. No ownership of underlying source code or trade secrets is transferred, and reverse engineering, decompiling, or unauthorized redistribution is strictly prohibited.</p>
+      <p><strong>2. Strictly "AS-IS" Blind Notary Mandate &amp; Zero Support:</strong> IDAOS operates locally on the user's hardware as a blind notary utility and is provided strictly <strong>"AS-IS"</strong> without warranty of any kind, express or implied. One Nation Republic LLC provides <strong>ZERO technical support</strong>, installation assistance, or legal/engineering advice. The Licensee assumes full responsibility for hardware compatibility and all files processed through the software.</p>
+      <p><strong>3. Final Sale &amp; Strict No-Refund Policy:</strong> Because IDAOS is delivered as downloadable digital software and cryptographic tooling, <strong>ALL SALES ARE FINAL — STRICTLY NO REFUNDS, CANCELLATIONS, OR CHARGEBACKS ARE PERMITTED UNDER ANY CIRCUMSTANCES.</strong> By completing checkout via Stripe, the Licensee explicitly waives any right to a refund or payment dispute.</p>
+      <p><strong>4. Administrative &amp; Billing Contact:</strong> For billing inquiries or delivery access issues ONLY, contact <a href="mailto:onenationtroubleshooting@gmail.com">onenationtroubleshooting@gmail.com</a>.</p>
+      <p style="margin-bottom:0;">&copy; 2026 One Nation Republic LLC. All Rights Reserved. Without Prejudice — UCC 1-308.</p>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 One Nation Republic LLC. All Rights Reserved.</p>
+      <p style="margin-top: 10px;">
+        <a href="index.html">&larr; One Nation Main Foundation Page</a> &nbsp;|&nbsp;
+        <a href="links.html">❖ Explore The Book of Johnson Hub, Replays &amp; Official Links &rarr;</a>
+      </p>
+    </footer>
+  </div>
+
+</body>
+</html>
