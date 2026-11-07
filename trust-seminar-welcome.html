@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Swan's Revocable Trust Seminar Access Hub | One Nation Republic</title>
+  <meta name="description" content="Official Post-Purchase Access Hub and Google Group Instructions for Swan's Revocable Trust Seminar." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-deep: #000000;
+      --bg-surface: rgba(10, 14, 22, 0.82);
+      --bg-elevated: rgba(18, 25, 38, 0.94);
+      --border-subtle: rgba(212, 175, 55, 0.18);
+      --gold: #d4af37;
+      --gold-bright: #f9e29c;
+      --gold-deep: #99741f;
+      --gold-border: rgba(212, 175, 55, 0.45);
+      --text-primary: #f8fafc;
+      --text-secondary: #cbd5e1;
+      --text-muted: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    ::selection { background: var(--gold); color: #000; }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #020305; }
+    ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, var(--gold-deep), var(--gold), var(--gold-deep)); border-radius: 4px; }
+
+    body {
+      background-color: var(--bg-deep);
+      color: var(--text-primary);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Dynamic Celestial Starfield */
+    .bg-animation {
+      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1;
+      background: radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.08) 0%, rgba(10, 15, 28, 0.4) 35%, #000000 75%);
+      overflow: hidden;
+    }
+    .stars, .stars2, .stars3 { position: absolute; inset: 0; width: 100%; height: 200%; display: block; background-repeat: repeat; }
+    .stars {
+      background-image: radial-gradient(1px 1px at 25px 50px, #fff, transparent), radial-gradient(1.5px 1.5px at 50px 100px, #d4af37, transparent), radial-gradient(2px 2px at 150px 150px, #fff, transparent);
+      background-size: 250px 250px; opacity: 0.45; animation: driftStars 90s linear infinite;
+    }
+    .stars2 {
+      background-image: radial-gradient(1.5px 1.5px at 80px 120px, #d4af37, transparent), radial-gradient(1px 1px at 200px 80px, #fff, transparent);
+      background-size: 350px 350px; opacity: 0.65; animation: driftStars 140s linear infinite;
+    }
+    .stars3 {
+      background-image: radial-gradient(2px 2px at 50px 200px, #fff, transparent), radial-gradient(1.5px 1.5px at 250px 250px, #d4af37, transparent);
+      background-size: 450px 450px; opacity: 0.35; animation: driftStars 200s linear infinite;
+    }
+
+    @keyframes driftStars { from { transform: translateY(0); } to { transform: translateY(-50%); } }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes rotateSlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    @keyframes rotateReverse { from { transform: rotate(360deg); } to { transform: rotate(0deg); } }
+    @keyframes pulseHalo {
+      0%, 100% { box-shadow: 0 0 40px rgba(212, 175, 55, 0.22), inset 0 0 20px rgba(212, 175, 55, 0.15); }
+      50% { box-shadow: 0 0 65px rgba(212, 175, 55, 0.45), inset 0 0 30px rgba(212, 175, 55, 0.25); }
+    }
+    @keyframes goldShimmer { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+
+    .wrapper { max-width: 980px; margin: 0 auto; padding: 64px 24px 90px; position: relative; z-index: 1; animation: fadeUp 0.85s ease forwards; }
+
+    /* Hero Header */
+    header { text-align: center; padding: 30px 0 56px; margin-bottom: 56px; display: flex; flex-direction: column; align-items: center; position: relative; }
+    header::after {
+      content: ""; position: absolute; bottom: 0; left: 10%; width: 80%; height: 1px;
+      background: linear-gradient(90deg, transparent 0%, var(--gold-border) 25%, var(--gold-bright) 50%, var(--gold-border) 75%, transparent 100%);
+    }
+    .logo-frame {
+      position: relative; padding: 8px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold-bright) 0%, var(--gold-deep) 50%, var(--gold) 100%);
+      animation: pulseHalo 5s ease-in-out infinite; margin-bottom: 32px; display: flex; align-items: center; justify-content: center;
+    }
+    .logo-frame::before {
+      content: ""; position: absolute; inset: -12px; border-radius: 50%;
+      border: 1px dashed rgba(212, 175, 55, 0.55); animation: rotateSlow 45s linear infinite; pointer-events: none;
+    }
+    .logo-frame::after {
+      content: ""; position: absolute; inset: -22px; border-radius: 50%;
+      border: 1px solid rgba(212, 175, 55, 0.18); border-top-color: var(--gold); border-bottom-color: var(--gold);
+      animation: rotateReverse 30s linear infinite; pointer-events: none;
+    }
+    .logo-img { width: 200px; height: 200px; object-fit: cover; border-radius: 50%; border: 3px solid #000; display: block; position: relative; z-index: 2; }
+
+    .eyebrow {
+      display: inline-block; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--gold-bright); background: linear-gradient(90deg, rgba(212,175,55,0.05) 0%, rgba(212,175,55,0.18) 50%, rgba(212,175,55,0.05) 100%);
+      border: 1px solid var(--gold-border); padding: 7px 20px; border-radius: 2px; margin-bottom: 20px; backdrop-filter: blur(8px);
+    }
+    h1 {
+      font-family: 'Cinzel', Georgia, serif; font-size: clamp(2rem, 4.5vw, 3.1rem); font-weight: 800; letter-spacing: 0.08em;
+      background: linear-gradient(120deg, #fff 0%, var(--gold-bright) 35%, var(--gold) 65%, #fff 100%);
+      background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      animation: goldShimmer 8s ease infinite; margin-bottom: 14px; filter: drop-shadow(0 4px 16px rgba(0,0,0,0.9));
+    }
+    .hero-sub { font-size: 1.1rem; color: var(--text-secondary); max-width: 680px; margin: 0 auto 30px; }
+
+    .cta-group { display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-block; background: linear-gradient(135deg, var(--gold-bright) 0%, var(--gold) 50%, #b88f28 100%);
+      color: #000; font-family: 'Cinzel', Georgia, serif; font-weight: 800; font-size: 0.95rem; letter-spacing: 0.06em;
+      text-transform: uppercase; text-decoration: none; padding: 16px 36px; border-radius: 4px; transition: all 0.28s ease;
+      box-shadow: 0 6px 24px rgba(212, 175, 55, 0.35);
+    }
+    .btn-primary:hover { transform: translateY(-3px) scale(1.01); box-shadow: 0 12px 32px rgba(249, 226, 156, 0.5); }
+    .btn-secondary {
+      display: inline-block; background: var(--bg-surface); backdrop-filter: blur(10px); color: var(--gold-bright);
+      border: 1px solid var(--gold-border); font-family: 'Cinzel', Georgia, serif; font-weight: 700; font-size: 0.9rem;
+      letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; padding: 15px 30px; border-radius: 4px; transition: all 0.28s ease;
+    }
+    .btn-secondary:hover { background: rgba(212, 175, 55, 0.18); border-color: var(--gold-bright); color: #fff; transform: translateY(-3px); }
+
+    /* Cards & Panels */
+    .section-label { font-size: 0.76rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.24em; color: var(--gold-bright); margin-bottom: 10px; display: block; }
+    h2 { font-family: 'Cinzel', Georgia, serif; font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; letter-spacing: 0.05em; color: var(--text-primary); margin-bottom: 20px; }
+
+    .foundation-card {
+      background: linear-gradient(160deg, rgba(16, 22, 34, 0.88) 0%, rgba(8, 11, 18, 0.92) 100%);
+      backdrop-filter: blur(12px); border: 1px solid var(--border-subtle); border-top: 3px solid var(--gold);
+      border-radius: 6px; padding: clamp(28px, 4.5vw, 48px); margin-bottom: 48px; box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+    }
+    .foundation-card p { color: var(--text-secondary); font-size: 1.03rem; margin-bottom: 18px; }
+
+    .vision-list { list-style: none; display: grid; gap: 14px; margin: 20px 0 28px; }
+    .vision-list li {
+      display: flex; align-items: flex-start; gap: 14px; background: var(--bg-elevated);
+      border: 1px solid var(--border-subtle); padding: 16px 22px; border-radius: 4px; color: var(--text-primary); font-size: 0.98rem;
+    }
+    .vision-list li::before { content: "❖"; color: var(--gold-bright); font-size: 0.85rem; margin-top: 2px; flex-shrink: 0; }
+
+    .foundation-callout {
+      margin-top: 24px; padding: 22px 26px; background: linear-gradient(135deg, rgba(212, 175, 55, 0.14) 0%, rgba(14, 20, 30, 0.95) 100%);
+      border: 1px solid var(--gold-border); border-left: 4px solid var(--gold-bright); border-radius: 0 4px 4px 0;
+    }
+    .foundation-callout p { color: var(--text-primary); font-size: 1rem; margin-bottom: 8px; }
+    .foundation-callout p:last-child { margin-bottom: 0; }
+
+    .legal-notice {
+      margin: 56px 0 32px; padding: 28px; background: rgba(8, 11, 18, 0.78); backdrop-filter: blur(10px);
+      border: 1px solid var(--border-subtle); border-radius: 6px; color: var(--text-muted); font-size: 0.85rem; line-height: 1.65;
+    }
+    .legal-notice h3 { font-family: 'Cinzel', Georgia, serif; font-size: 0.95rem; color: var(--gold-bright); margin-top: 0; margin-bottom: 12px; }
+    .legal-notice p { margin-bottom: 10px; }
+    .legal-notice a { color: var(--gold-bright); text-decoration: none; }
+
+    footer {
+      text-align: center; border: 1px solid var(--border-subtle); border-top: 2px solid var(--gold-border);
+      color: var(--text-muted); font-size: 0.88rem; background: var(--bg-surface); backdrop-filter: blur(10px);
+      border-radius: 6px; padding: 28px 24px; box-shadow: 0 12px 32px rgba(0,0,0,0.6);
+    }
+    footer a { color: var(--gold-bright); text-decoration: none; font-weight: 600; }
+    footer a:hover { color: #fff; text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <div class="bg-animation">
+    <div class="stars"></div>
+    <div class="stars2"></div>
+    <div class="stars3"></div>
+  </div>
+
+  <div class="wrapper">
+    <header>
+      <div class="logo-frame">
+        <img src="BSA.avif" alt="Black-Swan Academia Emblem" class="logo-img" />
+      </div>
+      <span class="eyebrow">𓋹 Payment Confirmed • One Nation Republic &amp; BSA Hub 𓋹</span>
+      <h1>SWAN'S REVOCABLE TRUST SEMINAR</h1>
+      <p class="hero-sub">Thank you for securing your access pass to Swan's Revocable Trust Seminar. Follow the steps below to enter our private Google Group distribution hub and access your seminar recordings, templates, and trust structuring vaults.</p>
+      <div class="cta-group">
+        <a href="https://groups.google.com/g/revocable-trust-seminar" class="btn-primary" target="_blank" rel="noopener noreferrer">⚡ Step 1: Enter the Google Group Hub</a>
+        <a href="mailto:onenationtroubleshooting@gmail.com" class="btn-secondary">❖ Contact Support Desk</a>
+      </div>
+    </header>
+
+    <!-- STEP 1: GOOGLE GROUP & ACCESS INSTRUCTIONS -->
+    <section class="foundation-card">
+      <span class="section-label">❖ Step 1 • Seminar Access &amp; Community Archives</span>
+      <h2>Join the Google Group Hub</h2>
+      <p>All seminar replays, revocable trust templates, study guides, and ongoing updates are distributed securely through our private Google Group hub: <strong>revocable-trust-seminar@googlegroups.com</strong>.</p>
+
+      <ul class="vision-list">
+        <li><div><strong>1. Request Group Access (Gmail Required):</strong> Make sure you are signed into a <strong>Gmail account</strong>, click the gold button below to open the official Google Group (<a href="https://groups.google.com/g/revocable-trust-seminar" target="_blank" rel="noopener noreferrer" style="color: var(--gold-bright);">https://groups.google.com/g/revocable-trust-seminar</a>), and click <strong>"Join Group" / "Ask to join group"</strong>.</div></li>
+        <li><div><strong>2. Use Your Checkout Email as Verification:</strong> Apply using the <strong>exact email address you paid with at Stripe checkout</strong>. If prompted when applying, enter your checkout email as your verification code so your access is approved promptly.</div></li>
+        <li><div><strong>3. Enter the Seminar Vault:</strong> Once approved (check Google Groups in your browser the following day if applying after hours), open the <strong>Pinned Welcome Announcement</strong> inside the group feed for direct links to the seminar recordings and trust materials.</div></li>
+      </ul>
+
+      <div class="cta-group" style="justify-content: flex-start;">
+        <a href="https://groups.google.com/g/revocable-trust-seminar" class="btn-primary" target="_blank" rel="noopener noreferrer">⚡ Open revocable-trust-seminar@googlegroups.com Hub &rarr;</a>
+      </div>
+
+      <div class="foundation-callout">
+        <p><strong>Need Immediate Assistance or Used a Different Email?</strong></p>
+        <p>If your Gmail account differs from the email address you entered at Stripe checkout, send a quick note to <a href="mailto:onenationtroubleshooting@gmail.com" style="color: var(--gold-bright); font-weight: 600;">onenationtroubleshooting@gmail.com</a> with your full name and Stripe receipt so our team can manually approve your access.</p>
+      </div>
+    </section>
+
+    <!-- STEP 2: SUPPORT & TROUBLESHOOTING -->
+    <section class="foundation-card">
+      <span class="section-label">❖ Step 2 • Direct Support &amp; Assistance</span>
+      <h2>Questions or Access Inquiries?</h2>
+      <p>For any questions regarding group approvals, membership status, or billing inquiries, reach out directly to our dedicated troubleshooting desk:</p>
+
+      <div class="foundation-callout" style="text-align: center; padding: 30px;">
+        <p style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--gold-bright); margin-bottom: 8px;">Official Support Email</p>
+        <p style="font-family: 'Cinzel', Georgia, serif; font-size: clamp(1.1rem, 2.5vw, 1.5rem); font-weight: 700; margin-bottom: 18px;">
+          <a href="mailto:onenationtroubleshooting@gmail.com" style="color: #ffffff; text-decoration: underline;">onenationtroubleshooting@gmail.com</a>
+        </p>
+        <a href="mailto:onenationtroubleshooting@gmail.com?subject=Swan's%20Revocable%20Trust%20Seminar%20Access%20Support" class="btn-primary">✉ Email onenationtroubleshooting@gmail.com</a>
+      </div>
+    </section>
+
+    <section class="legal-notice">
+      <h3>❖ Educational Archive Terms &amp; Final Sale Policy</h3>
+      <p><strong>Terms of Access:</strong> Enrollment and digital access constitute formal execution of the One Nation Republic LLC Educational Material NDA and As-Is SLA. All seminar recordings, templates, and research materials are provided strictly <strong>AS-IS</strong> with zero technical support for private educational and reference use — <strong>ALL SALES ARE FINAL — STRICTLY NO REFUNDS.</strong></p>
+      <p style="margin-bottom:0;">&copy; 2026 One Nation Republic LLC &amp; Black-Swan Academia. All Rights Reserved. Without Prejudice — UCC 1-308.</p>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 One Nation Republic LLC. All Rights Reserved.</p>
+      <p style="margin-top: 10px;">
+        <a href="index.html">&larr; Main Foundation Hub</a> &nbsp;|&nbsp;
+        <a href="links.html">❖ Official Links Hub &rarr;</a>
+      </p>
+    </footer>
+  </div>
+
+</body>
+</html>
