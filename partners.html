@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>One Nation Republic | Independent Strategic Partner Program</title>
-  <meta name="description" content="Official 50/50 Strategic Partner Onboarding, Stripe Connect Architecture & Portal Deployment for One Nation Republic." />
+  <meta name="description" content="Official 50/50 Strategic Partner Onboarding, Stripe Connect Architecture & Standardized Directory Deployment for One Nation Republic." />
   <meta property="og:title" content="One Nation Republic | Official 50/50 Strategic Partner Program" />
-  <meta property="og:description" content="Deploy your dedicated One Nation Partner Hub with automated 50/50 Stripe Connect revenue splits." />
+  <meta property="og:description" content="Get your official One Nation Republic 50/50 Stripe Connect split links and standardized partner directory." />
   <meta property="og:image" content="https://onenationrepublic.com/One%20Nation%20Logo.jpg" />
   <meta property="og:url" content="https://onenationrepublic.com/partners.html" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -46,7 +46,6 @@
       overflow-wrap: anywhere;
     }
 
-    /* Dynamic Celestial Starfield */
     .bg-animation {
       position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1;
       background: radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.09) 0%, rgba(10, 15, 28, 0.45) 35%, #000000 75%);
@@ -78,7 +77,6 @@
 
     .wrapper { max-width: 900px; width: 100%; margin: 0 auto; padding: 56px 20px 80px; position: relative; z-index: 1; animation: fadeUp 0.85s ease forwards; }
 
-    /* Header */
     header { text-align: center; padding: 16px 0 36px; display: flex; flex-direction: column; align-items: center; }
     .logo-frame {
       position: relative; padding: 8px; border-radius: 50%;
@@ -109,7 +107,6 @@
     }
     .hero-sub { font-size: 1.05rem; color: var(--text-secondary); max-width: 680px; margin: 0 auto 24px; }
 
-    /* Nav Pills */
     .social-bar { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-bottom: 36px; }
     .social-pill {
       display: inline-block; padding: 8px 18px; border-radius: 999px; font-size: 0.8rem; font-weight: 600;
@@ -118,7 +115,6 @@
     }
     .social-pill:hover { background: var(--gold); color: #000; transform: translateY(-2px); }
 
-    /* Cards & Sections */
     .card {
       background: var(--bg-surface); backdrop-filter: blur(12px);
       border: 1px solid var(--border-subtle); border-top: 3px solid var(--gold);
@@ -135,7 +131,6 @@
     }
     p { color: var(--text-secondary); margin-bottom: 14px; font-size: 0.95rem; }
 
-    /* 3-Product Split Grid */
     .split-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 20px; }
     .split-box {
       background: var(--bg-elevated); border: 1px solid var(--gold-border);
@@ -150,7 +145,6 @@
     .split-earn { font-size: 1.1rem; font-weight: 700; color: var(--gold-bright); margin: 8px 0; }
     .split-box p { font-size: 0.85rem; margin-bottom: 0; color: var(--text-muted); }
 
-    /* Step List */
     .steps-list { list-style: none; display: flex; flex-direction: column; gap: 16px; margin-top: 16px; }
     .step-item {
       background: rgba(18, 25, 38, 0.75); border: 1px solid var(--border-subtle);
@@ -159,18 +153,14 @@
     .step-title { font-family: 'Cinzel', Georgia, serif; font-weight: 700; color: #fff; font-size: 1rem; margin-bottom: 4px; }
     .step-desc { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0; }
 
-    /* Tier Comparison */
-    .tier-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-top: 18px; }
-    .tier-card {
-      background: var(--bg-elevated); border: 1px solid var(--border-subtle);
-      border-radius: 6px; padding: 24px;
+    .lineup-box {
+      background: var(--bg-elevated); border: 1px solid var(--gold-border);
+      border-radius: 6px; padding: 24px; margin-top: 16px;
     }
-    .tier-card.highlight { border-color: var(--gold); }
-    .tier-card h3 { font-family: 'Cinzel', Georgia, serif; font-size: 1.1rem; color: var(--gold-bright); margin-bottom: 8px; }
-    .tier-card ul { padding-left: 18px; color: var(--text-secondary); font-size: 0.9rem; }
-    .tier-card li { margin-bottom: 8px; }
+    .lineup-box h3 { font-family: 'Cinzel', Georgia, serif; font-size: 1.1rem; color: var(--gold-bright); margin-bottom: 12px; }
+    .lineup-box ol { padding-left: 20px; color: var(--text-secondary); font-size: 0.92rem; }
+    .lineup-box li { margin-bottom: 10px; }
 
-    /* Architect Tip Jar Card */
     .tip-card {
       background: linear-gradient(145deg, rgba(16, 28, 22, 0.92) 0%, rgba(10, 14, 22, 0.96) 100%);
       border: 1px solid rgba(0, 214, 50, 0.45); border-top: 3px solid var(--cashapp-green);
@@ -192,7 +182,6 @@
     }
     .cashapp-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(0, 214, 50, 0.5); background: #22e850; }
 
-    /* Intake Form */
     .form-group { margin-bottom: 16px; }
     label { display: block; font-size: 0.84rem; font-weight: 600; color: var(--gold-bright); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.06em; }
     input, select, textarea {
@@ -209,7 +198,6 @@
     }
     .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(212, 175, 55, 0.35); }
 
-    /* Legal Notice */
     .legal-notice {
       margin: 40px 0 24px; padding: 24px; background: rgba(8, 11, 18, 0.78);
       border: 1px solid var(--border-subtle); border-radius: 6px; color: var(--text-muted); font-size: 0.82rem; line-height: 1.6;
@@ -245,11 +233,12 @@
       </div>
       <span class="eyebrow">𓋹 Structure • Unity • Economic Cooperation 𓋹</span>
       <h1>STRATEGIC PARTNER PROGRAM</h1>
-      <p class="hero-sub">Official 50/50 Revenue-Split Architecture, Partner Hub Deployment &amp; Stripe Connect Onboarding Protocol.</p>
+      <p class="hero-sub">Official 50/50 Revenue-Split Architecture, Standardized Directory &amp; Stripe Connect Onboarding Protocol.</p>
 
       <div class="social-bar">
         <a href="#how-it-works" class="social-pill">50/50 Split</a>
         <a href="#onboarding-steps" class="social-pill">Stripe Setup</a>
+        <a href="#directory-lineup" class="social-pill">Directory Lineup</a>
         <a href="#architect-support" class="social-pill">Tip the Architect</a>
         <a href="#partner-intake" class="social-pill">Apply / Submit</a>
         <a href="index.html" class="social-pill">One Nation Main Site</a>
@@ -260,17 +249,10 @@
     <section id="how-it-works" class="card">
       <span class="section-label">❖ Automated Revenue Sharing</span>
       <h2>How the 50/50 Partner Split Works</h2>
-      <p>One Nation Republic empowers builders, educators, and community leaders through direct economic cooperation. Instead of relying on manual end-of-month payouts or third-party tracking cookies, every approved Strategic Partner receives a dedicated partner portal hosted on <strong>onenationrepublic.com</strong> wired directly to <strong>Stripe Connect</strong>.</p>
-      <p>When someone purchases through the buttons on your dedicated Partner Hub, Stripe automatically splits the transaction at checkout and routes <strong>50% of the net proceeds</strong> directly into your connected Stripe account.</p>
+      <p>One Nation Republic empowers builders, educators, and community leaders through direct economic cooperation. Instead of relying on manual end-of-month payouts or third-party tracking cookies, every approved Strategic Partner is connected directly to <strong>One Nation Republic LLC's Stripe Connect</strong> infrastructure.</p>
+      <p>When someone purchases through your dedicated 50/50 Stripe split links on your standardized One Nation Partner Directory page, Stripe automatically splits the transaction at checkout and routes <strong>50% of the net proceeds</strong> directly into your connected Stripe account.</p>
 
       <div class="split-grid">
-        <div class="split-box">
-          <span class="split-price">$149 Retail</span>
-          <h3>IDAOS Public License</h3>
-          <div class="split-earn">50% Partner Split</div>
-          <p>Local-First SHA-256 Hashing &amp; Bitcoin OpenTimestamps (.ots) Operating System.</p>
-        </div>
-
         <div class="split-box">
           <span class="split-price">$75 Retail</span>
           <h3>Lawful Library Archive</h3>
@@ -284,14 +266,21 @@
           <div class="split-earn">50% Partner Split</div>
           <p>Cross-Platform (Windows, Mac &amp; Linux) Asset Security &amp; Hashing Utility.</p>
         </div>
+
+        <div class="split-box">
+          <span class="split-price">$149 Retail</span>
+          <h3>IDAOS Public License</h3>
+          <div class="split-earn">50% Partner Split</div>
+          <p>Local-First SHA-256 Hashing &amp; Bitcoin OpenTimestamps (.ots) Operating System.</p>
+        </div>
       </div>
     </section>
 
-    <!-- SECTION 2: WHY DEDICATED HUBS ARE REQUIRED -->
+    <!-- SECTION 2: 4-STEP STRIPE VERIFICATION -->
     <section id="onboarding-steps" class="card">
       <span class="section-label">❖ Technical Protocol</span>
       <h2>4-Step Partner Onboarding &amp; Stripe Verification</h2>
-      <p><strong>Important Technical Note:</strong> Stripe cannot split payments when traffic is sent to someone else's Linktree or checkout link. To receive automated 50/50 payouts, you must promote your own dedicated Partner Hub URL containing your unique Stripe split links.</p>
+      <p><strong>Important Technical Note:</strong> Stripe cannot split payments when traffic is sent to someone else's Linktree or general checkout link. To receive automated 50/50 payouts, your traffic must use your unique Stripe Connect split links hosted on the standardized One Nation Partner Directory.</p>
 
       <ul class="steps-list">
         <li class="step-item">
@@ -303,70 +292,62 @@
           <p class="step-desc">Inside your Stripe dashboard, click the <strong>"Information required / Complete your profile"</strong> banner. Submit your ID verification, SSN/EIN, and payout checking account so your account status switches from <em>Restricted</em> to <em>Enabled</em> with both <strong>Merchant</strong> and <strong>Transfers</strong> capabilities active.</p>
         </li>
         <li class="step-item">
-          <div class="step-title">Step 3: Dedicated Partner Portal Deployment</div>
-          <p class="step-desc">Once your Stripe account shows <strong>Active / Transfers Enabled</strong>, we generate your three 50/50 split payment links (IDAOS, Lawful Library, and ONRAP) and deploy your dedicated hub page (e.g., <em>onenationrepublic.com/links-yourname.html</em>).</p>
+          <div class="step-title">Step 3: Receive Your Standardized One Nation Directory Link</div>
+          <p class="step-desc">Once your Stripe account shows <strong>Active / Transfers Enabled</strong>, we generate your three 50/50 split payment links (Lawful Library, ONRAP, and IDAOS) and plug them into our standardized One Nation Partner Directory template (e.g., <a href="links-miller.html" style="color: var(--gold-bright);">onenationrepublic.com/links-miller.html</a>).</p>
         </li>
         <li class="step-item">
-          <div class="step-title">Step 4: Place Your Hub Link in Your Bio</div>
-          <p class="step-desc">Put your new One Nation Partner Hub URL at the top of your TikTok, Instagram, Facebook, or Linktree bio. Every sale made through your page pays your 50% split automatically.</p>
+          <div class="step-title">Step 4: Share Your Directory Link</div>
+          <p class="step-desc">Place your standardized One Nation Partner Directory link in your bio or share it directly with your audience. Every sale made through your split links pays your 50% share automatically.</p>
         </li>
       </ul>
     </section>
 
-    <!-- SECTION 3: COURTESY VS CUSTOM TIERS -->
-    <section class="card">
-      <span class="section-label">❖ Portal Specifications</span>
-      <h2>Standard Courtesy Hub vs. Custom Builds</h2>
-      <div class="tier-grid">
-        <div class="tier-card highlight">
-          <h3>Standard Partner Hub (Courtesy of Partnership)</h3>
-          <ul>
-            <li><strong>$0 Upfront Setup:</strong> Provided as a courtesy for verified 50/50 Strategic Partners.</li>
-            <li>Official One Nation celestial black-and-gold responsive design.</li>
-            <li>Includes the 30-Day Free Trial Community button + your 3 dedicated 50/50 Stripe split buttons (IDAOS, Library, ONRAP).</li>
-            <li>Includes 1 primary social media pill + 1 contact email pill.</li>
-          </ul>
-        </div>
+    <!-- SECTION 3: STANDARDIZED DIRECTORY ARCHITECTURE -->
+    <section id="directory-lineup" class="card">
+      <span class="section-label">❖ Unified One Nation Architecture</span>
+      <h2>Standardized Partner Directory Lineup</h2>
+      <p>To keep the ecosystem unified and 100% focused on One Nation Republic, all partner pages use the exact same official One Nation Republic design and link strictly back to the main One Nation foundation page (<a href="index.html" style="color: var(--gold-bright);">onenationrepublic.com</a>) and official product checkouts—with no outside business links or external social media clutter.</p>
 
-        <div class="tier-card">
-          <h3>Custom Branded Additions &amp; Edits</h3>
-          <ul>
-            <li><strong>Custom Scope Quote:</strong> Required if you want outside affiliate grids, third-party products, custom logos, or intake forms added to your portal.</li>
-            <li>Includes 1 initial launch revision; additional ongoing link swaps or custom layout redesigns are billed separately.</li>
-            <li>All custom pages must maintain mandatory Stripe underwriting &amp; AS-IS compliance disclosures.</li>
-          </ul>
-        </div>
+      <div class="lineup-box">
+        <h3>Official Directory Button Order (Included on Every Partner Page):</h3>
+        <ol>
+          <li><strong>One Nation Republic Community Membership:</strong> $20/Month with a 30-Day Free Trial.</li>
+          <li><strong>Lawful Library Access ($75 Study Archive):</strong> Wired to your 50/50 Partner Split Link (automatically redirects buyers to <a href="library.html" style="color: var(--gold-bright);">library.html</a> after checkout).</li>
+          <li><strong>ONRAP v3.0 — Asset Security Program ($20 Software Access):</strong> Wired to your 50/50 Partner Split Link.</li>
+          <li><strong>IDAOS — Public License &amp; Local Deployment Package ($149 Local-First OS):</strong> Wired to your 50/50 Partner Split Link.</li>
+          <li><strong>Official Seminars &amp; Class Replays:</strong> Direct access to the Trust Class Replay Membership &amp; Executive Class Replay Membership.</li>
+        </ol>
       </div>
     </section>
 
     <!-- SECTION 4: ARCHITECT PERSONAL TIP JAR ($Radiobee999) -->
     <section id="architect-support" class="tip-card">
-      <span class="tip-badge">⚡ Voluntary Developer Appreciation</span>
-      <h2>Support the Lead Systems Architect</h2>
+      <span class="tip-badge">⚡ Developer Tip Jar • 100% Optional</span>
+      <h2>Buy the Lead Systems Architect a Coffee (or a Steak)</h2>
       <p style="max-width: 660px; margin: 0 auto 12px; color: var(--text-primary);">
-        Standard 50/50 Partner Hubs are coded, wired, and deployed at zero upfront charge to help you launch fast. If you appreciate the late-night coding, custom HTML architecture, and Stripe pipeline engineering—and want to buy the tech guy a coffee or a steak—you can send a voluntary personal tip directly to the Lead Architect via Cash App:
+        Standard 50/50 Partner Directories and Stripe Connect split links are wired and deployed <strong>on the house</strong> to help you launch fast. You never have to pay a dime to get your partner links set up—but if you appreciate the late-night coding, HTML builds, and Stripe pipeline work and ever feel like tossing a tip in the jar for the tech guy, you can send it straight to my personal Cash App:
       </p>
       <a href="https://cash.app/$Radiobee999" target="_blank" rel="noopener noreferrer" class="cashapp-btn">
         💸 Cash App: $Radiobee999
       </a>
       <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 14px; margin-bottom: 0;">
-        *Note: Contributions to <strong>$Radiobee999</strong> are strictly voluntary personal gifts/tips to the developer and are not payments for One Nation Republic LLC corporate services or commercial invoices.
+        *Note: Completely optional and no strings attached! Any tips sent to <strong>$Radiobee999</strong> are personal gifts of appreciation to the developer and are separate from One Nation Republic LLC business services.
       </p>
     </section>
 
     <!-- SECTION 5: PARTNER ONBOARDING INTAKE FORM -->
     <section id="partner-intake" class="card">
-      <span class="section-label">❖ Request Your Portal</span>
-      <h2>Partner Onboarding &amp; Hub Activation Form</h2>
-      <p>Ready to launch your 50/50 Partner Hub? Submit your details below and our administrative desk will send your Stripe Connect invite and build your page.</p>
+      <span class="section-label">❖ Request Your Split Links</span>
+      <h2>50/50 Partner Onboarding Request</h2>
+      <p>Ready to connect your Stripe account and get your standardized 50/50 Partner Directory link? Submit your details below and our administrative desk will send your Stripe Connect invite.</p>
 
       <form action="https://formsubmit.co/onenationtroubleshooting@gmail.com" method="POST">
-        <input type="hidden" name="_subject" value="New 50/50 Strategic Partner Portal Request" />
+        <input type="hidden" name="_subject" value="New 50/50 Strategic Partner Onboarding Request" />
         <input type="hidden" name="_captcha" value="false" />
 
         <div class="form-group">
-          <label for="partner_name">Partner / Brand Name (Displayed at Top of Your Hub)</label>
-          <input type="text" id="partner_name" name="Partner_Brand_Name" placeholder="e.g., Ryan Solution / 697 Roots / Miller" required />
+          <label for="partner_name">Your Name (For Internal Stripe Connect Tracking &amp; URL Slug)</label>
+          <input type="text" id="partner_name" name="Partner_Name" placeholder="e.g., Miller / Todd / Smith" required />
         </div>
 
         <div class="form-group">
@@ -375,24 +356,19 @@
         </div>
 
         <div class="form-group">
-          <label for="social_link">Primary Social Media Link (Optional Top Pill)</label>
-          <input type="url" id="social_link" name="Primary_Social_URL" placeholder="https://facebook.com/... or https://tiktok.com/@..." />
-        </div>
-
-        <div class="form-group">
-          <label for="hub_tier">Portal Type Requested</label>
-          <select id="hub_tier" name="Portal_Tier">
-            <option value="Standard Courtesy Hub (3 Split Links + Community)">Standard 50/50 Courtesy Hub ($0 Upfront — 3 Split Links + Community)</option>
-            <option value="Custom Branded Portal (Requires Custom Quote)">Custom Branded Portal (Adding External Products / Custom Layout)</option>
+          <label for="stripe_status">Current Stripe Account Status</label>
+          <select id="stripe_status" name="Stripe_Status">
+            <option value="Need Stripe Connect Invite Sent">I need the Stripe Connect invitation sent to my email</option>
+            <option value="Already Connected & Verified (Transfers Active)">I already accepted the invite &amp; completed ID/Bank verification</option>
           </select>
         </div>
 
         <div class="form-group">
-          <label for="notes">Stripe Verification Status / Additional Notes</label>
-          <textarea id="notes" name="Notes" rows="3" placeholder="Let us know if you already have a verified Stripe account or need us to send the Connect invite link..."></textarea>
+          <label for="notes">Additional Notes (Optional)</label>
+          <textarea id="notes" name="Notes" rows="3" placeholder="Any questions or updates on your Stripe verification..."></textarea>
         </div>
 
-        <button type="submit" class="submit-btn">Submit Partner Portal Request →</button>
+        <button type="submit" class="submit-btn">Submit Partner Onboarding Request →</button>
       </form>
     </section>
 
@@ -400,7 +376,7 @@
     <section class="legal-notice">
       <h3>❖ Independent Strategic Partner &amp; Compliance Notice</h3>
       <p><strong>Independent Contractor Relationship:</strong> Participants in the One Nation Republic Strategic Partner Program operate strictly as independent third-party promoters and are not employees, corporate officers, or legal representatives of One Nation Republic LLC.</p>
-      <p><strong>Centralized Underwriting &amp; Refund Policy:</strong> All partner portals hosted on onenationrepublic.com are governed by One Nation Republic LLC's mandatory compliance terms. All digital software packages (IDAOS and ONRAP) and study library materials are provided strictly <strong>AS-IS</strong> with zero technical support — <strong>ALL SALES ARE FINAL — STRICTLY NO REFUNDS.</strong></p>
+      <p><strong>Centralized Underwriting &amp; Refund Policy:</strong> All partner directories hosted on onenationrepublic.com are governed by One Nation Republic LLC's mandatory compliance terms. All digital software packages (IDAOS and ONRAP), seminar replays, and study library materials are provided strictly <strong>AS-IS</strong> with zero technical support — <strong>ALL SALES ARE FINAL — STRICTLY NO REFUNDS.</strong></p>
       <p style="margin-bottom:0;"><strong>Administrative Support:</strong> For partner onboarding, Stripe Connect verification, or billing inquiries, contact <a href="mailto:onenationtroubleshooting@gmail.com">onenationtroubleshooting@gmail.com</a>.</p>
     </section>
 
