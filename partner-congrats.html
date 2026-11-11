@@ -29,6 +29,7 @@
       --text-secondary: #cbd5e1;
       --text-muted: #94a3b8;
       --cashapp-green: #00D632;
+      --amber-warn: #f59e0b;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html, body { max-width: 100%; overflow-x: hidden; scroll-behavior: smooth; }
@@ -128,6 +129,36 @@
     }
     p { color: var(--text-secondary); margin-bottom: 14px; font-size: 0.96rem; }
 
+    .status-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; margin-top: 20px; }
+    .status-box {
+      background: var(--bg-elevated); border: 1px solid var(--gold-border);
+      border-radius: 6px; padding: 16px; text-align: center;
+    }
+    .status-box.pending {
+      border-color: rgba(245, 158, 11, 0.55);
+      background: rgba(28, 22, 12, 0.9);
+    }
+    .status-tag {
+      display: inline-block; font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.14em; color: #000; background: var(--cashapp-green);
+      padding: 3px 10px; border-radius: 999px; margin-bottom: 8px;
+    }
+    .status-tag.dev {
+      background: var(--amber-warn); color: #000;
+    }
+    .status-box h3 { font-family: 'Cinzel', Georgia, serif; font-size: 0.96rem; color: #fff; margin-bottom: 4px; }
+    .status-box p { font-size: 0.83rem; color: var(--gold-bright); margin-bottom: 0; font-weight: 600; }
+
+    .dev-notice {
+      margin-top: 20px; padding: 18px 20px;
+      background: rgba(245, 158, 11, 0.08);
+      border: 1px solid rgba(245, 158, 11, 0.45);
+      border-left: 4px solid var(--amber-warn);
+      border-radius: 5px;
+    }
+    .dev-notice strong { color: var(--gold-bright); }
+    .dev-notice p { margin-bottom: 0; font-size: 0.91rem; color: var(--text-primary); }
+
     .steps-list { list-style: none; display: flex; flex-direction: column; gap: 16px; margin-top: 18px; }
     .step-item {
       background: rgba(18, 25, 38, 0.85); border: 1px solid var(--border-subtle);
@@ -135,19 +166,6 @@
     }
     .step-title { font-family: 'Cinzel', Georgia, serif; font-weight: 700; color: #fff; font-size: 1.02rem; margin-bottom: 6px; }
     .step-desc { font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 0; }
-
-    .status-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; margin-top: 20px; }
-    .status-box {
-      background: var(--bg-elevated); border: 1px solid var(--gold-border);
-      border-radius: 6px; padding: 16px; text-align: center;
-    }
-    .status-tag {
-      display: inline-block; font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.14em; color: #000; background: var(--cashapp-green);
-      padding: 3px 10px; border-radius: 999px; margin-bottom: 8px;
-    }
-    .status-box h3 { font-family: 'Cinzel', Georgia, serif; font-size: 0.98rem; color: #fff; margin-bottom: 4px; }
-    .status-box p { font-size: 0.84rem; color: var(--gold-bright); margin-bottom: 0; font-weight: 600; }
 
     /* Highlighted Cash App Tip Jar at Bottom */
     .tip-card {
@@ -204,33 +222,43 @@
       </div>
       <span class="eyebrow">✓ Onboarding Complete • Partner Portal Deployed</span>
       <h1>CONGRATULATIONS, PARTNER!</h1>
-      <p class="hero-sub">Your Stripe Connect account is verified, your 50/50 automated split links are wired, and your dedicated One Nation Republic Partner Hub is officially LIVE.</p>
+      <p class="hero-sub">Your Stripe Connect account is verified, your 50/50 product split links are wired, and your dedicated One Nation Republic Partner Hub is officially LIVE.</p>
     </header>
 
-    <!-- SECTION 1: WHAT IS NOW ACTIVE -->
+    <!-- SECTION 1: WHAT IS NOW ACTIVE + 30-DAY MEMBERSHIP ROLLOUT -->
     <section class="card">
-      <span class="section-label">❖ System Status: 100% Operational</span>
+      <span class="section-label">❖ System Status &amp; Split Rollout Schedule</span>
       <h2>Your Automated 50/50 Revenue Engine is Live</h2>
-      <p>Your custom Partner Hub URL (included in your welcome email) is now live on <strong>onenationrepublic.com</strong> and connected directly to your Stripe account. Every time someone purchases any of the core digital packages below through your page, Stripe splits the payment at checkout and deposits <strong>50% of the net proceeds</strong> directly into your connected Stripe balance:</p>
+      <p>Your custom Partner Hub URL (included in your launch email) is now live on <strong>onenationrepublic.com</strong> and connected directly to your Stripe account. Every time someone purchases any of the three core digital packages below through your page, Stripe splits the payment at checkout and deposits <strong>50% of the net proceeds</strong> directly into your connected Stripe balance:</p>
 
       <div class="status-grid">
         <div class="status-box">
           <span class="status-tag">✓ Wired &amp; Active</span>
           <h3>Lawful Library ($75)</h3>
-          <p>50% Automatic Partner Split</p>
+          <p>50% Partner Split Live</p>
         </div>
 
         <div class="status-box">
           <span class="status-tag">✓ Wired &amp; Active</span>
           <h3>ONRAP v3.0 ($20)</h3>
-          <p>50% Automatic Partner Split</p>
+          <p>50% Partner Split Live</p>
         </div>
 
         <div class="status-box">
           <span class="status-tag">✓ Wired &amp; Active</span>
           <h3>IDAOS License ($149)</h3>
-          <p>50% Automatic Partner Split</p>
+          <p>50% Partner Split Live</p>
         </div>
+
+        <div class="status-box pending">
+          <span class="status-tag dev">⏳ In Dev (~30 Days)</span>
+          <h3>$20/Mo Membership</h3>
+          <p>Split Link Coming Soon</p>
+        </div>
+      </div>
+
+      <div class="dev-notice">
+        <p><strong>⚙️ Developer Update on $20/Month Community Membership Splits:</strong> Hold tight! The 50/50 partner split links for the recurring $20/Month One Nation Community Membership are currently in active development and are scheduled to roll out within the <strong>next 30 days</strong>. Until that backend migration is finalized, the top Community Membership button on your hub remains linked to the main house account while the Lead Developer completes the integration. You will be notified as soon as your 50/50 Membership split link is swapped in!</p>
       </div>
     </section>
 
@@ -243,15 +271,15 @@
       <ul class="steps-list">
         <li class="step-item">
           <div class="step-title">1. Put ONLY Your Dedicated Hub Link in Your Bio</div>
-          <p class="step-desc">Copy your personal Partner Hub URL from your welcome email (e.g., <em>onenationrepublic.com/links-yourname.html</em>) and place it in your TikTok, Instagram, Facebook, and YouTube bios. <strong>Never send traffic to the main Linktree or another partner's page</strong>—Stripe only splits transactions that originate from the buttons on your specific page.</p>
+          <p class="step-desc">Copy your personal Partner Hub URL from your launch email (e.g., <em>onenationrepublic.com/links-yourname.html</em>) and place it in your TikTok, Instagram, Facebook, and YouTube bios. <strong>Never send traffic to the main Linktree or another partner's page</strong>—Stripe only splits transactions that originate from the buttons on your specific page.</p>
         </li>
         <li class="step-item">
-          <div class="step-title">2. Open Your Page &amp; Bookmark It</div>
-          <p class="step-desc">Click your live Partner Hub link to see your layout in action! Your page features the 30-Day Free Trial Community button followed by the $75 Lawful Library, $20 ONRAP v3.0, $149 IDAOS, and the official Class Replay memberships.</p>
+          <div class="step-title">2. Focus Your Promotion on the 3 Active Split Products Right Now</div>
+          <p class="step-desc">While the Lead Developer finishes the 30-day rollout for the $20/month Membership split links, spotlight the <strong>$75 Lawful Library</strong>, <strong>$20 ONRAP v3.0</strong>, and <strong>$149 IDAOS</strong> packages to start stacking immediate 50/50 payouts into your Stripe account today.</p>
         </li>
         <li class="step-item">
           <div class="step-title">3. Track Your Payouts in Your Stripe Dashboard</div>
-          <p class="step-desc">Whenever a follower purchases through your hub, you will see the 50% transfer land directly inside your Stripe dashboard, where it automatically pays out to your linked bank account on your standard Stripe payout schedule.</p>
+          <p class="step-desc">Whenever a follower purchases the Library, ONRAP, or IDAOS through your hub, you will see the 50% transfer land directly inside your Stripe dashboard, where it automatically pays out to your linked bank account on your standard Stripe payout schedule.</p>
         </li>
       </ul>
     </section>
