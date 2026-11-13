@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>One Nation Republic | Independent Strategic Partner Program</title>
-  <meta name="description" content="Official 50/50 Strategic Partner Onboarding, Stripe Connect Architecture & Standardized Directory Deployment for One Nation Republic." />
+  <meta name="description" content="Official 50/50 Strategic Partner Onboarding, Stripe Connect Verification Guide & Directory Deployment for One Nation Republic." />
   <meta property="og:title" content="One Nation Republic | Official 50/50 Strategic Partner Program" />
-  <meta property="og:description" content="Get your official One Nation Republic 50/50 Stripe Connect split links and standardized partner directory." />
+  <meta property="og:description" content="Complete your Stripe Connect verification and deploy your standardized One Nation Partner Hub with automated 50/50 revenue splits." />
   <meta property="og:image" content="https://onenationrepublic.com/One%20Nation%20Logo.jpg" />
   <meta property="og:url" content="https://onenationrepublic.com/partners.html" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -28,6 +28,12 @@
       --text-secondary: #cbd5e1;
       --text-muted: #94a3b8;
       --cashapp-green: #00D632;
+      --status-red-bg: rgba(239, 68, 68, 0.14);
+      --status-red-border: rgba(239, 68, 68, 0.5);
+      --status-red-text: #fca5a5;
+      --status-green-bg: rgba(34, 197, 94, 0.14);
+      --status-green-border: rgba(34, 197, 94, 0.5);
+      --status-green-text: #86efac;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html, body { max-width: 100%; overflow-x: hidden; scroll-behavior: smooth; }
@@ -145,6 +151,12 @@
     .split-earn { font-size: 1.1rem; font-weight: 700; color: var(--gold-bright); margin: 8px 0; }
     .split-box p { font-size: 0.85rem; margin-bottom: 0; color: var(--text-muted); }
 
+    .rollout-banner {
+      margin-top: 20px; padding: 16px 20px; background: rgba(212, 175, 55, 0.08);
+      border: 1px solid var(--gold-border); border-left: 4px solid var(--gold);
+      border-radius: 4px; font-size: 0.9rem; color: var(--text-secondary);
+    }
+
     .steps-list { list-style: none; display: flex; flex-direction: column; gap: 16px; margin-top: 16px; }
     .step-item {
       background: rgba(18, 25, 38, 0.75); border: 1px solid var(--border-subtle);
@@ -153,13 +165,61 @@
     .step-title { font-family: 'Cinzel', Georgia, serif; font-weight: 700; color: #fff; font-size: 1rem; margin-bottom: 4px; }
     .step-desc { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0; }
 
-    .lineup-box {
-      background: var(--bg-elevated); border: 1px solid var(--gold-border);
-      border-radius: 6px; padding: 24px; margin-top: 16px;
+    /* Stripe Status Comparison & Verification Guide */
+    .status-compare {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px; margin: 20px 0;
     }
-    .lineup-box h3 { font-family: 'Cinzel', Georgia, serif; font-size: 1.1rem; color: var(--gold-bright); margin-bottom: 12px; }
-    .lineup-box ol { padding-left: 20px; color: var(--text-secondary); font-size: 0.92rem; }
-    .lineup-box li { margin-bottom: 10px; }
+    .status-box {
+      padding: 18px 20px; border-radius: 6px; background: var(--bg-elevated);
+    }
+    .status-box.restricted { border: 1px solid var(--status-red-border); background: linear-gradient(145deg, rgba(40, 12, 16, 0.75), rgba(14, 18, 28, 0.95)); }
+    .status-box.enabled { border: 1px solid var(--status-green-border); background: linear-gradient(145deg, rgba(12, 38, 24, 0.75), rgba(14, 18, 28, 0.95)); }
+
+    .stripe-pill {
+      display: inline-block; font-size: 0.75rem; font-weight: 700; padding: 3px 10px;
+      border-radius: 4px; margin-bottom: 10px; letter-spacing: 0.03em;
+    }
+    .stripe-pill.red { background: var(--status-red-bg); border: 1px solid var(--status-red-border); color: var(--status-red-text); }
+    .stripe-pill.green { background: var(--status-green-bg); border: 1px solid var(--status-green-border); color: var(--status-green-text); }
+
+    .checklist-box {
+      background: rgba(14, 20, 32, 0.9); border: 1px solid var(--gold-border);
+      border-radius: 6px; padding: 22px 24px; margin-top: 18px;
+    }
+    .checklist-box h3 {
+      font-family: 'Cinzel', Georgia, serif; font-size: 1.08rem;
+      color: var(--gold-bright); margin-bottom: 12px;
+    }
+    .checklist-items { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .checklist-items li {
+      font-size: 0.9rem; color: var(--text-secondary);
+      padding-left: 26px; position: relative;
+    }
+    .checklist-items li::before {
+      content: "✔"; position: absolute; left: 0; top: 0;
+      color: var(--gold-bright); font-weight: 800;
+    }
+    .copy-code {
+      display: inline-block; background: rgba(212, 175, 55, 0.14);
+      border: 1px solid var(--gold-border); color: var(--gold-bright);
+      padding: 1px 8px; border-radius: 4px; font-family: monospace; font-size: 0.86rem;
+    }
+    .warning-banner {
+      margin-top: 18px; padding: 16px 18px;
+      background: rgba(239, 68, 68, 0.1); border: 1px solid var(--status-red-border);
+      border-left: 4px solid #ef4444; border-radius: 4px;
+      font-size: 0.88rem; color: #fecaca;
+    }
+
+    .lineup-list {
+      list-style: none; display: flex; flex-direction: column; gap: 10px; margin-top: 14px;
+    }
+    .lineup-list li {
+      background: var(--bg-elevated); border: 1px solid var(--border-subtle);
+      border-radius: 4px; padding: 12px 16px; font-size: 0.9rem; color: var(--text-secondary);
+    }
+    .lineup-list strong { color: var(--gold-bright); }
 
     .tip-card {
       background: linear-gradient(145deg, rgba(16, 28, 22, 0.92) 0%, rgba(10, 14, 22, 0.96) 100%);
@@ -214,7 +274,7 @@
 
     @media (max-width: 640px) {
       .wrapper { padding: 36px 14px 60px; }
-      .card, .tip-card { padding: 22px 18px; }
+      .card, .tip-card, .checklist-box { padding: 22px 16px; }
     }
   </style>
 </head>
@@ -233,12 +293,12 @@
       </div>
       <span class="eyebrow">𓋹 Structure • Unity • Economic Cooperation 𓋹</span>
       <h1>STRATEGIC PARTNER PROGRAM</h1>
-      <p class="hero-sub">Official 50/50 Revenue-Split Architecture, Standardized Directory &amp; Stripe Connect Onboarding Protocol.</p>
+      <p class="hero-sub">Official 50/50 Revenue-Split Architecture, Stripe Connect Verification Guide &amp; Standardized Partner Hub Protocol.</p>
 
       <div class="social-bar">
-        <a href="#how-it-works" class="social-pill">50/50 Split</a>
-        <a href="#onboarding-steps" class="social-pill">Stripe Setup</a>
-        <a href="#directory-lineup" class="social-pill">Directory Lineup</a>
+        <a href="#how-it-works" class="social-pill">50/50 Splits</a>
+        <a href="#stripe-verification" class="social-pill">Stripe Verification Guide</a>
+        <a href="#onboarding-steps" class="social-pill">4-Step Launch</a>
         <a href="#architect-support" class="social-pill">Tip the Architect</a>
         <a href="#partner-intake" class="social-pill">Apply / Submit</a>
         <a href="index.html" class="social-pill">One Nation Main Site</a>
@@ -249,8 +309,8 @@
     <section id="how-it-works" class="card">
       <span class="section-label">❖ Automated Revenue Sharing</span>
       <h2>How the 50/50 Partner Split Works</h2>
-      <p>One Nation Republic empowers builders, educators, and community leaders through direct economic cooperation. Instead of relying on manual end-of-month payouts or third-party tracking cookies, every approved Strategic Partner is connected directly to <strong>One Nation Republic LLC's Stripe Connect</strong> infrastructure.</p>
-      <p>When someone purchases through your dedicated 50/50 Stripe split links on your standardized One Nation Partner Directory page, Stripe automatically splits the transaction at checkout and routes <strong>50% of the net proceeds</strong> directly into your connected Stripe account.</p>
+      <p>One Nation Republic empowers builders, educators, and community leaders through direct economic cooperation. Every approved Strategic Partner receives a standardized partner directory page hosted on <strong>onenationrepublic.com</strong> wired directly to <strong>Stripe Connect</strong>.</p>
+      <p>When someone purchases through the product buttons on your Partner Hub, Stripe automatically splits the transaction at checkout and routes <strong>50% of the net proceeds</strong> directly into your connected Stripe account.</p>
 
       <div class="split-grid">
         <div class="split-box">
@@ -264,7 +324,7 @@
           <span class="split-price">$20 Retail</span>
           <h3>ONRAP v3.0 Utility</h3>
           <div class="split-earn">50% Partner Split</div>
-          <p>Cross-Platform (Windows, Mac &amp; Linux) Asset Security &amp; Hashing Utility.</p>
+          <p>Cross-Platform (Windows, Mac &amp; Linux) Asset Security &amp; SHA-256 Hashing Utility.</p>
         </div>
 
         <div class="split-box">
@@ -274,58 +334,110 @@
           <p>Local-First SHA-256 Hashing &amp; Bitcoin OpenTimestamps (.ots) Operating System.</p>
         </div>
       </div>
+
+      <div class="rollout-banner">
+        <strong>⚡ 30-Day Rollout Notice ($20/Mo Community Membership Splits):</strong> Your 50/50 automated Stripe splits for the <strong>Lawful Library ($75)</strong>, <strong>ONRAP v3.0 ($20)</strong>, and <strong>IDAOS ($149)</strong> activate immediately upon launch. Automated 50/50 split links for the $20/Month Community Membership are currently in backend development and scheduled to roll out within the next 30 days.
+      </div>
     </section>
 
-    <!-- SECTION 2: 4-STEP STRIPE VERIFICATION -->
+    <!-- SECTION 2: CRITICAL STRIPE VERIFICATION CHECKLIST (RESTRICTED VS ENABLED) -->
+    <section id="stripe-verification" class="card">
+      <span class="section-label">❖ Mandatory Stripe Requirements</span>
+      <h2>Why Partner Accounts Get Stuck on "Restricted" (And How to Turn Yours Green)</h2>
+      <p>Simply creating a login password from our Stripe invite link <strong>does not activate your account</strong>. Stripe locks every new connected account as <strong>Restricted</strong> until you complete all identity, tax, and bank payout requirements. <strong>Stripe's system will not allow us to generate your 50/50 split links while your account says Restricted.</strong></p>
+
+      <div class="status-compare">
+        <div class="status-box restricted">
+          <span class="stripe-pill red">Restricted</span>
+          <h3 style="font-family:'Cinzel',serif; font-size:1rem; color:#fff; margin-bottom:6px;">Cannot Generate Split Links</h3>
+          <p style="font-size:0.86rem; margin-bottom:0; color:var(--text-secondary);">
+            Missing ID scan, SSN/EIN, website field, or payout bank account. <strong>Transfers capability is locked</strong>—we cannot attach your account to any payment links yet.
+          </p>
+        </div>
+
+        <div class="status-box enabled">
+          <span class="stripe-pill green">Enabled</span>
+          <h3 style="font-family:'Cinzel',serif; font-size:1rem; color:#fff; margin-bottom:6px;">Ready for 50/50 Partner Hub!</h3>
+          <p style="font-size:0.86rem; margin-bottom:0; color:var(--text-secondary);">
+            All identity, tax, and bank payout checks are verified. Both <strong>Merchant &amp; Recipient (Transfers)</strong> capabilities are active and ready for instant link generation.
+          </p>
+        </div>
+      </div>
+
+      <div class="checklist-box">
+        <h3>❖ 5-Point Stripe Onboarding Cheat Sheet (Complete All 5 Steps)</h3>
+        <ul class="checklist-items">
+          <li>
+            <strong>1. Business Type Selection:</strong> Select <strong>"Individual / Sole Proprietor"</strong> for the fastest instant verification. <em>(Warning: Only select "Company / LLC" or "Trust" if you have your official IRS EIN Confirmation Letter and formation paperwork ready to upload immediately—otherwise Stripe will lock your account in Restricted status!)</em>
+          </li>
+          <li>
+            <strong>2. What to Enter for "Business Website":</strong> Do not leave this blank or exit the page! When Stripe asks for your Business Website URL, paste <span class="copy-code">https://onenationrepublic.com</span> (or click <em>"Add a product description instead"</em> and type: <em>"Independent educational software and study archive promotion."</em>)
+          </li>
+          <li>
+            <strong>3. Personal Identity &amp; Tax Info:</strong> Enter your full legal name, date of birth, physical street address (Stripe does not allow P.O. Boxes for identity verification), and your SSN (or EIN). If Stripe prompts you to scan your Driver's License or ID with your phone camera, complete that scan immediately.
+          </li>
+          <li>
+            <strong>4. Attach a Payout Checking Account:</strong> Enter a valid checking account <strong>Routing Number and Account Number</strong> (or eligible payout debit card). Stripe keeps your <strong>Transfers</strong> capability locked until a payout bank is attached.
+          </li>
+          <li>
+            <strong>5. Click "Agree &amp; Submit" &amp; Clear All Top Banners:</strong> After submitting, log into <a href="https://dashboard.stripe.com" target="_blank" rel="noopener noreferrer" style="color:var(--gold-bright);">dashboard.stripe.com</a> and check the top of your screen. If you see an orange or red <strong>"Information required"</strong> or <strong>"Complete your profile"</strong> banner, click it and finish the remaining prompts until all warnings disappear.
+          </li>
+        </ul>
+
+        <div class="warning-banner">
+          <strong>🚫 DO NOT CLICK THE INVITE LINK TWICE (NO DUPLICATE ACCOUNTS):</strong> If you stop halfway through onboarding and need to finish later, <strong>do not click the original invite link again</strong>—doing so creates a second blank Restricted account under your email. Instead, go directly to <a href="https://dashboard.stripe.com" target="_blank" rel="noopener noreferrer" style="color:#fff; text-decoration:underline; font-weight:700;">dashboard.stripe.com</a>, sign in with the email and password you already created, and click the <strong>"Complete your profile / Information required"</strong> banner at the top of your dashboard.
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: 4-STEP ONBOARDING FLOW -->
     <section id="onboarding-steps" class="card">
       <span class="section-label">❖ Technical Protocol</span>
-      <h2>4-Step Partner Onboarding &amp; Stripe Verification</h2>
-      <p><strong>Important Technical Note:</strong> Stripe cannot split payments when traffic is sent to someone else's Linktree or general checkout link. To receive automated 50/50 payouts, your traffic must use your unique Stripe Connect split links hosted on the standardized One Nation Partner Directory.</p>
+      <h2>4-Step Partner Onboarding Flow</h2>
+      <p><strong>Important Technical Note:</strong> Stripe cannot split payments when traffic is sent to someone else's Linktree or checkout link. To receive automated 50/50 payouts, you must promote your own dedicated Partner Hub URL containing your unique Stripe split links.</p>
 
       <ul class="steps-list">
         <li class="step-item">
-          <div class="step-title">Step 1: Accept Your Stripe Connect Invitation</div>
-          <p class="step-desc">We will send an official Stripe Connect invitation to your email. Click the link to create or link your Stripe account to One Nation Republic LLC.</p>
+          <div class="step-title">Step 1: Request &amp; Accept Your Stripe Connect Invitation</div>
+          <p class="step-desc">Submit the form at the bottom of this page to receive an official Stripe Connect invitation via email, and click the link once to create or link your Stripe account to One Nation Republic LLC.</p>
         </li>
         <li class="step-item">
-          <div class="step-title">Step 2: Complete Identity &amp; Bank Verification (Unlock "Transfers")</div>
-          <p class="step-desc">Inside your Stripe dashboard, click the <strong>"Information required / Complete your profile"</strong> banner. Submit your ID verification, SSN/EIN, and payout checking account so your account status switches from <em>Restricted</em> to <em>Enabled</em> with both <strong>Merchant</strong> and <strong>Transfers</strong> capabilities active.</p>
+          <div class="step-title">Step 2: Complete the 5-Point Verification Checklist Above</div>
+          <p class="step-desc">Follow the 5 checkpoints above so your account switches from <strong style="color:var(--status-red-text);">Restricted</strong> to <strong style="color:var(--status-green-text);">Enabled</strong> with both <strong>Merchant</strong> and <strong>Recipient (Transfers)</strong> capabilities active.</p>
         </li>
         <li class="step-item">
           <div class="step-title">Step 3: Receive Your Standardized One Nation Directory Link</div>
-          <p class="step-desc">Once your Stripe account shows <strong>Active / Transfers Enabled</strong>, we generate your three 50/50 split payment links (Lawful Library, ONRAP, and IDAOS) and plug them into our standardized One Nation Partner Directory template (e.g., <a href="links-miller.html" target="_blank" rel="noopener noreferrer" style="color: var(--gold-bright); text-decoration: underline;">onenationrepublic.com/links-[yourname].html</a>).</p>
+          <p class="step-desc">Once your Stripe account shows <strong>Enabled / Transfers Active</strong>, we generate your three 50/50 split payment links (Lawful Library, ONRAP, and IDAOS) and plug them into our standardized One Nation Partner Directory template (e.g., <a href="links-miller.html" target="_blank" rel="noopener noreferrer" style="color: var(--gold-bright); text-decoration: underline;">onenationrepublic.com/links-[yourname].html</a>).</p>
         </li>
         <li class="step-item">
-          <div class="step-title">Step 4: Share Your Directory Link</div>
-          <p class="step-desc">Place your standardized One Nation Partner Directory link in your bio or share it directly with your audience. Every sale made through your split links pays your 50% share automatically.</p>
+          <div class="step-title">Step 4: Place Your Hub Link in Your Bio</div>
+          <p class="step-desc">Put your new One Nation Partner Hub URL at the top of your TikTok, Instagram, Facebook, or Linktree bio. Every eligible product sale made through your page pays your 50% split automatically.</p>
         </li>
       </ul>
     </section>
 
-    <!-- SECTION 3: STANDARDIZED DIRECTORY ARCHITECTURE -->
-    <section id="directory-lineup" class="card">
-      <span class="section-label">❖ Unified One Nation Architecture</span>
-      <h2>Standardized Partner Directory Lineup</h2>
-      <p>To keep the ecosystem unified and 100% focused on One Nation Republic, all partner pages use the exact same official One Nation Republic design and link strictly back to the main One Nation foundation page (<a href="index.html" style="color: var(--gold-bright);">onenationrepublic.com</a>) and official product checkouts—with no outside business links or external social media clutter.</p>
+    <!-- SECTION 4: STANDARDIZED PORTAL LINEUP -->
+    <section class="card">
+      <span class="section-label">❖ Standardized Directory Architecture</span>
+      <h2>What Is Included on Your Official Partner Hub</h2>
+      <p>To maintain institutional compliance and a unified experience across the Republic, all Strategic Partner pages use our locked-in master template (<a href="links-miller.html" target="_blank" rel="noopener noreferrer" style="color: var(--gold-bright);">preview live template here</a>) built <strong>on the house ($0 setup fee)</strong> with zero outside social links or third-party branding:</p>
 
-      <div class="lineup-box">
-        <h3>Official Directory Button Order (Included on Every Partner Page):</h3>
-        <ol>
-          <li><strong>One Nation Republic Community Membership:</strong> $20/Month with a 30-Day Free Trial.</li>
-          <li><strong>Lawful Library Access ($75 Study Archive):</strong> Wired to your 50/50 Partner Split Link (automatically redirects buyers to <a href="library.html" style="color: var(--gold-bright);">library.html</a> after checkout).</li>
-          <li><strong>ONRAP v3.0 — Asset Security Program ($20 Software Access):</strong> Wired to your 50/50 Partner Split Link.</li>
-          <li><strong>IDAOS — Public License &amp; Local Deployment Package ($149 Local-First OS):</strong> Wired to your 50/50 Partner Split Link.</li>
-          <li><strong>Official Seminars &amp; Class Replays:</strong> Direct access to the Trust Class Replay Membership &amp; Executive Class Replay Membership.</li>
-        </ol>
-      </div>
+      <ul class="lineup-list">
+        <li><strong>1. One Nation Main Site Return Button:</strong> Direct top navigation back to <a href="index.html" style="color: var(--gold-bright); text-decoration: none;">onenationrepublic.com</a>.</li>
+        <li><strong>2. One Nation Republic Membership ($20/Mo • 30-Day Free Trial):</strong> Official community entry plan (50/50 partner splits rolling out within 30 days).</li>
+        <li><strong>3. Lawful Library Access ($75 Study Archive):</strong> Wired directly to your <strong>50/50 Stripe Split Link</strong>.</li>
+        <li><strong>4. ONRAP v3.0 ($20 Software Access):</strong> Wired directly to your <strong>50/50 Stripe Split Link</strong>.</li>
+        <li><strong>5. IDAOS Public License ($149 Local-First OS):</strong> Wired directly to your <strong>50/50 Stripe Split Link</strong>.</li>
+        <li><strong>6. Official Seminars &amp; Class Replays:</strong> Complete directory access to the Trust Class Replay &amp; Executive Class Replay Memberships.</li>
+      </ul>
     </section>
 
-    <!-- SECTION 4: ARCHITECT PERSONAL TIP JAR ($Radiobee999) -->
+    <!-- SECTION 5: ARCHITECT PERSONAL TIP JAR ($Radiobee999) -->
     <section id="architect-support" class="tip-card">
       <span class="tip-badge">⚡ Developer Tip Jar • 100% Optional</span>
       <h2>Buy the Lead Systems Architect a Coffee (or a Steak)</h2>
       <p style="max-width: 660px; margin: 0 auto 12px; color: var(--text-primary);">
-        Standard 50/50 Partner Directories and Stripe Connect split links are wired and deployed <strong>on the house</strong> to help you launch fast. You never have to pay a dime to get your partner links set up—but if you appreciate the late-night coding, HTML builds, and Stripe pipeline work and ever feel like tossing a tip in the jar for the tech guy, you can send it straight to my personal Cash App:
+        Standard 50/50 Partner Hubs are coded, wired, and deployed <strong>on the house</strong> to help you launch fast. You never have to pay a dime to get your standard partner link set up—but if you appreciate the late-night coding, custom HTML builds, and Stripe pipeline work and ever feel like tossing a tip in the jar for the tech guy, you can send it straight to my personal Cash App:
       </p>
       <a href="https://cash.app/$Radiobee999" target="_blank" rel="noopener noreferrer" class="cashapp-btn">
         💸 Cash App: $Radiobee999
@@ -335,40 +447,41 @@
       </p>
     </section>
 
-    <!-- SECTION 5: PARTNER ONBOARDING INTAKE FORM -->
+    <!-- SECTION 6: PARTNER ONBOARDING INTAKE FORM -->
     <section id="partner-intake" class="card">
-      <span class="section-label">❖ Request Your Split Links</span>
-      <h2>50/50 Partner Onboarding Request</h2>
-      <p>Ready to connect your Stripe account and get your standardized 50/50 Partner Directory link? Submit your details below and our administrative desk will send your Stripe Connect invite.</p>
+      <span class="section-label">❖ Request Your Portal</span>
+      <h2>Partner Onboarding &amp; Hub Activation Form</h2>
+      <p>Need a Stripe Connect invite link, or just finished clearing all red/orange banners in your Stripe dashboard so your account is <strong>Enabled</strong>? Submit your details below:</p>
 
       <form action="https://formsubmit.co/onenationtroubleshooting@gmail.com" method="POST">
-        <input type="hidden" name="_subject" value="New 50/50 Strategic Partner Onboarding Request" />
+        <input type="hidden" name="_subject" value="50/50 Strategic Partner Portal Request" />
         <input type="hidden" name="_captcha" value="false" />
 
         <div class="form-group">
-          <label for="partner_name">Your Name (For Internal Stripe Connect Tracking &amp; URL Slug)</label>
+          <label for="partner_name">Your Name / URL Slug (e.g., onenationrepublic.com/links-[yourname].html)</label>
           <input type="text" id="partner_name" name="Partner_Name" placeholder="e.g., [YourName]" required />
         </div>
 
         <div class="form-group">
-          <label for="stripe_email">Email Address for Stripe Connect Invite</label>
+          <label for="stripe_email">Email Address Used on Your Stripe Account</label>
           <input type="email" id="stripe_email" name="Stripe_Email" placeholder="youremail@example.com" required />
         </div>
 
         <div class="form-group">
-          <label for="stripe_status">Current Stripe Account Status</label>
-          <select id="stripe_status" name="Stripe_Status">
-            <option value="Need Stripe Connect Invite Sent">I need the Stripe Connect invitation sent to my email</option>
-            <option value="Already Connected & Verified (Transfers Active)">I already accepted the invite &amp; completed ID/Bank verification</option>
+          <label for="stripe_status">Current Stripe Verification Status</label>
+          <select id="stripe_status" name="Stripe_Verification_Status" required>
+            <option value="Need Stripe Invite Link Sent">1. I need you to email me the Stripe Connect invite link first</option>
+            <option value="VERIFIED & ENABLED — ID, SSN/EIN, Website & Bank Account Completed">2. ENABLED (Green) — I completed ID, SSN/EIN, Website &amp; Payout Bank Account!</option>
+            <option value="Stuck on Restricted — Need Help Troubleshooting">3. My account still says Restricted and I need help checking what is missing</option>
           </select>
         </div>
 
         <div class="form-group">
-          <label for="notes">Additional Notes (Optional)</label>
-          <textarea id="notes" name="Notes" rows="3" placeholder="Any questions or updates on your Stripe verification..."></textarea>
+          <label for="notes">Additional Notes / Questions</label>
+          <textarea id="notes" name="Notes" rows="3" placeholder="Let us know if you just finished updating your Stripe profile from Restricted to Enabled..."></textarea>
         </div>
 
-        <button type="submit" class="submit-btn">Submit Partner Onboarding Request →</button>
+        <button type="submit" class="submit-btn">Submit Partner Portal Status →</button>
       </form>
     </section>
 
@@ -376,7 +489,7 @@
     <section class="legal-notice">
       <h3>❖ Independent Strategic Partner &amp; Compliance Notice</h3>
       <p><strong>Independent Contractor Relationship:</strong> Participants in the One Nation Republic Strategic Partner Program operate strictly as independent third-party promoters and are not employees, corporate officers, or legal representatives of One Nation Republic LLC.</p>
-      <p><strong>Centralized Underwriting &amp; Refund Policy:</strong> All partner directories hosted on onenationrepublic.com are governed by One Nation Republic LLC's mandatory compliance terms. All digital software packages (IDAOS and ONRAP), seminar replays, and study library materials are provided strictly <strong>AS-IS</strong> with zero technical support — <strong>ALL SALES ARE FINAL — STRICTLY NO REFUNDS.</strong></p>
+      <p><strong>Centralized Underwriting &amp; Refund Policy:</strong> All partner portals hosted on onenationrepublic.com are governed by One Nation Republic LLC's mandatory compliance terms. All digital software packages (IDAOS and ONRAP) and study library materials are provided strictly <strong>AS-IS</strong> with zero technical support — <strong>ALL SALES ARE FINAL — STRICTLY NO REFUNDS.</strong></p>
       <p style="margin-bottom:0;"><strong>Administrative Support:</strong> For partner onboarding, Stripe Connect verification, or billing inquiries, contact <a href="mailto:onenationtroubleshooting@gmail.com">onenationtroubleshooting@gmail.com</a>.</p>
     </section>
 
